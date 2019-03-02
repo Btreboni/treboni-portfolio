@@ -13,7 +13,7 @@ export default class Home extends PureComponent {
     render() {
         return (
             <Outer>
-                <h1>Burke Treboni</h1>
+                <h1>&lt;Burke Treboni /&gt;</h1>
                 <img src={profileImage} alt="avatar" />
             </Outer>
         )
