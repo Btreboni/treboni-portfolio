@@ -1,10 +1,20 @@
 import styled from 'styled-components'
 
 const Outer = styled.div`
+    height: 100%
     padding-top: 10px;
+    padding-bottom: 60px;
 
-    h1{
-        font-family: Roboto;
+    #intro {
+        margin-top: 10px;
+        margin-left: 36%;
+    }
+
+    h4 {
+        align: center;
+        text-align: center;
+        width: 45%;
+        word-wrap: break-word;
     }
 
     img {
