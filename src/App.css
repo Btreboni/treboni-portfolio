@@ -15,7 +15,7 @@ body {
 
 .bm-item {
   display: inline-block;
-  text-decoration: none;
+  text-decoration: inherit;
   margin-bottom: 10px;
   color: #d1d1d1;
   transition: color 0.2s;

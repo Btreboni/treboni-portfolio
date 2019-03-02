@@ -4,12 +4,15 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 //styled
 import './App.css'
+import Main from './styled/Main'
+import Footer from './styled/Footer'
 
 //components
-import Main from './styled/Main'
 import SideBar from './components/SideBar'
 import Home from './components/Home'
 import About from './components/About'
+import Skills from './components/Skills'
+import Experience from './components/Experience'
 
 
 class App extends PureComponent {
@@ -28,6 +31,14 @@ class App extends PureComponent {
     return <About />
   }
 
+  renderSkills = () => {
+    return <Skills />
+  }
+
+  renderExperience = () => {
+    return <Experience />
+  }
+
   render() {
     return (
       <div id="App">
@@ -38,10 +49,11 @@ class App extends PureComponent {
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/about" render={this.renderAboutMe} />
-                {/* <Route path="" render={} />
-            <Route path="" render={} /> */}
+                <Route path="/skills" render={this.renderSkills} />
+                <Route path="/experience" render={this.renderExperience} />
               </Switch>
             </Main>
+            <Footer />
           </div>
         </BrowserRouter>
       </div>
