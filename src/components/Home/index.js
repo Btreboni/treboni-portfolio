@@ -21,61 +21,6 @@ export default class Home extends PureComponent {
                         I am currently a consultant with HMB at The Ohio Treasury working on the OPCS system.
                     </h4>
                 </div>
-                <div id="intro">
-                    <h4>
-                        Hello! My name is Burke Treboni, and I am a Columbus based full stack web developer.
-                        I am currently a consultant with HMB at The Ohio Treasury working on the OPCS system.
-                    </h4>
-                </div>
-                <div id="intro">
-                    <h4>
-                        Hello! My name is Burke Treboni, and I am a Columbus based full stack web developer.
-                        I am currently a consultant with HMB at The Ohio Treasury working on the OPCS system.
-                    </h4>
-                </div>
-                <div id="intro">
-                    <h4>
-                        Hello! My name is Burke Treboni, and I am a Columbus based full stack web developer.
-                        I am currently a consultant with HMB at The Ohio Treasury working on the OPCS system.
-                    </h4>
-                </div>
-                <div id="intro">
-                    <h4>
-                        Hello! My name is Burke Treboni, and I am a Columbus based full stack web developer.
-                        I am currently a consultant with HMB at The Ohio Treasury working on the OPCS system.
-                    </h4>
-                </div>
-                <div id="intro">
-                    <h4>
-                        Hello! My name is Burke Treboni, and I am a Columbus based full stack web developer.
-                        I am currently a consultant with HMB at The Ohio Treasury working on the OPCS system.
-                    </h4>
-                </div>
-                <div id="intro">
-                    <h4>
-                        Hello! My name is Burke Treboni, and I am a Columbus based full stack web developer.
-                        I am currently a consultant with HMB at The Ohio Treasury working on the OPCS system.
-                    </h4>
-                </div>
-                <div id="intro">
-                    <h4>
-                        Hello! My name is Burke Treboni, and I am a Columbus based full stack web developer.
-                        I am currently a consultant with HMB at The Ohio Treasury working on the OPCS system.
-                    </h4>
-                </div>
-                <div id="intro">
-                    <h4>
-                        Hello! My name is Burke Treboni, and I am a Columbus based full stack web developer.
-                        I am currently a consultant with HMB at The Ohio Treasury working on the OPCS system.
-                    </h4>
-                </div>
-                <div id="intro">
-                    <h4>
-                        Hello! My name is Burke Treboni, and I am a Columbus based full stack web developer.
-                        I am currently a consultant with HMB at The Ohio Treasury working on the OPCS system.
-                    </h4>
-                </div>
-                
             </Outer>
         )
     }
