@@ -30,7 +30,7 @@ export default class About extends PureComponent {
 						at Business Management. I was lucky enough to land a position at a local bar as a cook, and began slowly working
 						my way up the management ladder. Within 2 years, I was promoted to Bar Manager, and within 3 years, I was promoted
 						to General Manager.
-          </h4>
+        		    </h4>
 					<br />
 					<h4>
 						After a long 8 years in the bar business, and a total of 16 years in the service industry, I decided it was time to
@@ -56,7 +56,7 @@ export default class About extends PureComponent {
 						like I was drinking from a firehose. I was lucky enough to have a mentor throughout the process, and he helped me keep
 						my head above water during my 3 months of madness. This was by far the hardest thing I've ever done, but hands down
 						the best decision I ever made.
-       		</h4>
+ 		      		</h4>
 				</BioHolder>
 			</Outer>
 		)

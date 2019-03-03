@@ -43,7 +43,7 @@ class App extends PureComponent {
     return (
       <div id="App">
         <BrowserRouter>
-          <div>
+          <div id="container">
             <SideBar />
             <Main>
               <Switch>
@@ -53,9 +53,9 @@ class App extends PureComponent {
                 <Route path="/experience" render={this.renderExperience} />
               </Switch>
             </Main>
-            <Footer />
           </div>
         </BrowserRouter>
+        <Footer />
       </div>
     );
   }

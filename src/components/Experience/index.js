@@ -23,16 +23,16 @@ export default class Experience extends PureComponent {
                 <h2>Experience</h2>
                 <ul>
                     <li>
-                        <img src={SoftwareGuildLogo} id="sg-logo"/>
+                        <img src={SoftwareGuildLogo} id="sg-logo" alt="logo" />
                     </li>
                     <li>
-                        <img src={HMBLogo} id="hmb-logo"/>
+                        <img src={HMBLogo} id="hmb-logo" alt="logo" />
                     </li>
                     <li>
-                        <img src={HomesideLogo} id="homeside-logo" />
+                        <img src={HomesideLogo} id="homeside-logo" alt="logo" />
                     </li>
                 </ul>
-                
+
             </Outer>
         )
     }
