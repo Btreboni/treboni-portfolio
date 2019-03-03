@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 
 const Outer = styled.footer`
-    background-color: orange;
-
+    
     position: fixed;
     bottom: 0;
     left: 0;

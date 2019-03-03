@@ -1,5 +1,9 @@
 html,
 body {
+  background-image: url(https://travtalkindia.com/wp-content/uploads/2016/10/back-img.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  
   height: 100%;
   margin: 0;
 }
