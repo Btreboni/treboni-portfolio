@@ -4,8 +4,10 @@ const Outer = styled.div`
 
     height: 100%;
     width: 100%
+    
 
     @media(min-width: 768px){
+
         #hmb-logo {
             margin-top: 15px;
         }
@@ -17,6 +19,11 @@ const Outer = styled.div`
     
         #homeside-logo {
             background-color: none;
+        }
+
+        #tos-logo {
+            width: 150px;
+            height: 150px;
         }
     
         ul {

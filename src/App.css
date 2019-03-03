@@ -20,11 +20,9 @@ body {
 
 #container {
   min-height: 100%;
-  border: 5px solid pink;
 }
 
 #page-wrap {
-  border: 5px solid blue;
   text-align: center;
   overflow: auto;
   height: 100%;
