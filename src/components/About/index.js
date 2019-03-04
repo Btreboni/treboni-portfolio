@@ -23,15 +23,10 @@ export default class About extends PureComponent {
 
 		return (
 			<Outer>
-				<BioHolder>
+				<BioHolder>		
 					<h4>
-						Out of highschool, I did not have much direction as far as what I wanted to do in terms of a career. Growing
-						up, trade and service jobs became my niche, and I enjoyed working with people, so I thought I would try my hand
-						at Business Management. I was lucky enough to land a position at a local bar as a cook, and began slowly working
-						my way up the management ladder. Within 2 years, I was promoted to Bar Manager, and within 3 years, I was promoted
-						to General Manager.
-        		    </h4>
-					<br />
+						Hello, and thank you for stopping by my page! 
+					</h4>
 					<h4>
 						After a long 8 years in the bar business, and a total of 16 years in the service industry, I decided it was time to
 						make a change. I had outgrown the lifestyle of the industry. I felt like I needed to grow, and challenge myself. I
