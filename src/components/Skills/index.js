@@ -4,15 +4,14 @@ import React, { PureComponent } from 'react'
 import Outer from './styled/Outer'
 
 //logos
-import AngularJSLogo from './angularjs-logo.svg'
-import AzureLogo from './azure-logo.png'
-import CLogo from './c-logo.png'
-import GitLogo from './GitHub-Logo.png'
-import JavaLogo from './java-logo.png'
-import ReactLogo from './react-logo.png'
-import SqlLogo from './sql-logo.png'
-import JSLogo from './js-logo.png'
-import HtmlLogo from './html-logo.svg'
+import AngularJSLogo from './images/angularjs-logo.svg'
+import AzureLogo from './images/azure-logo.png'
+import CLogo from './images/c-logo.png'
+import JavaLogo from './images/java-logo.png'
+import ReactLogo from './images/react-logo.png'
+import SqlLogo from './images/sql-logo.png'
+import JSLogo from './images/js-logo.png'
+import HtmlLogo from './images/html-logo.svg'
 
 
 export default class Skills extends PureComponent {
