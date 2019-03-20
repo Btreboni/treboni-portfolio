@@ -4,10 +4,10 @@ import React, { PureComponent } from 'react'
 import Outer from './styled/Outer'
 
 //images
-import SoftwareGuildLogo from './software-guild-logo.png'
-import HomesideLogo from './homeside-logo.jpg'
-import HMBLogo from './hmb-logo.png'
-import TosLogo from './tos-logo.png'
+import SoftwareGuildLogo from './images/software-guild-logo.png'
+import HomesideLogo from './images/homeside-logo.jpg'
+import HMBLogo from './images/hmb-logo.png'
+import TosLogo from './images/tos-logo.png'
 
 const sgLink = "https://www.thesoftwareguild.com/gateway/?utm_medium=ppc&utm_source=google&tid=2805597&utm_campaign=Gateway_B_Search&utm_term=the%20software%20guild&utm_content=c_g_e_64082140246_329155038136&gclid=Cj0KCQiAk-7jBRD9ARIsAEy8mh6PqoEpxWNYzWel7TwgONptJN0oMWQFK9LWkorSnb0IxJJTY3JPMaIaAn-wEALw_wcB";
 const hmbLink = "https://www.hmbnet.com/";

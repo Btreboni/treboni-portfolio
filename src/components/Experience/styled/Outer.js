@@ -2,9 +2,8 @@ import styled from 'styled-components'
 
 const Outer = styled.div`
 
-    height: 100%;
-    width: 100%
-    
+    min-height: 100%;
+    width: 100%;
 
     @media(min-width: 768px){
 
@@ -44,7 +43,6 @@ const Outer = styled.div`
         }
 
         #hmb-logo {
-            
             width: 130px;
             height: 100px;
         }
@@ -72,6 +70,44 @@ const Outer = styled.div`
         li {
             display: inline;
             
+        }
+    }
+
+    @media(max-width: 425px){
+        li {
+            display: block;
+        }
+
+        h2{
+            margin-top: 75px;
+            margin-left: 40px;
+            width: 75%;
+        }
+
+        #sg-logo {
+            margin-right: 70px;
+            width: 200px;
+            height: 200px;
+        }
+
+        #hmb-logo {   
+            margin-right: 80px;
+            width: 150px;
+            height: 100px;
+        }
+
+        #homeside-logo {
+            margin-top: 50px;
+            margin-right: 68px;
+            width: 300px;
+            height: 135px;
+        }
+
+        #tos-logo {
+            margin-top: 20px;
+            margin-right: 65px;
+            width: 200px;
+            height: 200px;
         }
     }
 `
