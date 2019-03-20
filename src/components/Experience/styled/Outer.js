@@ -110,5 +110,44 @@ const Outer = styled.div`
             height: 200px;
         }
     }
+
+    @media(max-width: 375px){
+        li {
+            display: block;
+        }
+
+        h2{
+            margin-left: 40px;
+            width: 75%;
+        }
+
+        #sg-logo {
+            margin-right: 70px;
+            
+            width: 200px;
+            height: 200px;
+        }
+
+        #hmb-logo {   
+            margin-right: 80px;
+            width: 140px;
+            height: 80px;
+        }
+
+        #homeside-logo {
+            margin-top: 50px;
+            margin-right: 200px;
+            margin-bottom: 20px;
+            width: 300px;
+            height: 135px;
+        }
+
+        #tos-logo {
+            margin-top: 20px;
+            margin-right: 65px;
+            width: 200px;
+            height: 200px;
+        }
+    }
 `
 export default Outer
