@@ -1,19 +1,23 @@
 import styled from 'styled-components'
 
 const Outer = styled.div`
-    height: 100%
+    min-height: 100%
     padding-top: 10px;
     padding-bottom: 60px;
 
     #intro {
         margin-top: 10px;
-        margin-left: 36%;
+        margin-left: 34%;
+    }
+
+    h2{
+        display: none;
     }
 
     h4 {
         align: center;
         text-align: center;
-        width: 45%;
+        width: 50%;
         word-wrap: break-word;
     }
 
@@ -21,6 +25,17 @@ const Outer = styled.div`
         margin-top: 10px;
         border-radius: 50%;
     }
+
+    @media(max-width: 768px){
+        #intro{
+            margin-top: 25px;
+            margin-left: 13%;   
+        }
+
+        h4{
+            width: 90%;
+        }
+    }    
 
     @media(max-width: 425px){
         h1{
@@ -37,6 +52,28 @@ const Outer = styled.div`
             width: 90%;
         }
 
+    }
+
+    @media(max-width: 320px) {
+        padding-top: 100px;
+
+        h1 {
+            display: none;
+        }
+
+        h2{
+            display: initial;
+            
+        }
+
+        img{
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+        
+        #intro{
+            width: 90%;
+        }
     }
 `
 
