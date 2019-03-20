@@ -11,5 +11,10 @@ const Outer = styled.div`
         width: 75%;
         word-wrap: break-word;
     }
+
+    @media(max-width: 425px){
+        
+
+    }
 `
 export default Outer

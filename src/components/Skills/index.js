@@ -24,7 +24,7 @@ export default class Skills extends PureComponent {
         return (
             <Outer>
                 <h1>SKILLS</h1>
-                <ul>
+                <ul id="rowOne">
                     <li>
                         <img src={ReactLogo} id="react-logo" alt="logo" />
                     </li>
@@ -38,7 +38,7 @@ export default class Skills extends PureComponent {
                         <img src={HtmlLogo} id="html-logo" alt="logo" />
                     </li>
                 </ul>
-                <ul>
+                <ul id="rowTwo">
                     <li>
                         <img src={AngularJSLogo} id="ang-logo" alt="logo" />
                     </li>

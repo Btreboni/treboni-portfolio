@@ -21,6 +21,23 @@ const Outer = styled.div`
         margin-top: 10px;
         border-radius: 50%;
     }
+
+    @media(max-width: 425px){
+        h1{
+            margin-top: 100px;
+            margin-bottom: 20px;
+        }
+
+        #intro{
+            margin-top: 15px;
+            margin-left: 12%;
+        }
+
+        h4{
+            width: 90%;
+        }
+
+    }
 `
 
 export default Outer
