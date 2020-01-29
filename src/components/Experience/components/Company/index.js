@@ -19,11 +19,11 @@ export default class Company extends PureComponent{
 
         return(
             <Outer>
-                <div id="photo">
+                <div class="join" id="photo">
                     <a href={link}><img src={image} id={id} alt={alt} /></a>
                     <p>{toDate} - {fromDate}</p>
                 </div>
-                <div id="text">
+                <div class="join" id="text">
                     <p>{children}</p>
                 </div>
             </Outer>
