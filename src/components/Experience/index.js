@@ -23,12 +23,38 @@ export default class Experience extends PureComponent {
         return (
             <Outer>
                 <FancyTitle>Experience</FancyTitle>
-                <Company link={sgLink} image={SoftwareGuildLogo} id={"sg-logo"} alt={"logo"}>
-                    Testing Testing Testing
+                <Company link={hmbLink} 
+                    image={HMBLogo} 
+                    id={"hmb-logo"} 
+                    alt={"logo"} 
+                    toDate={"10/2018"} 
+                    fromDate={"Present"}>
+                    TEXT GOES HERE!
                 </Company>
-                <Company link={hmbLink} image={HMBLogo} id={"hmb-logo"} alt={"logo"}/>
-                <Company link={homesideLink} image={HomesideLogo} id={"homeside-logo"} alt={"logo"}/>
-                <Company link={tosLink} image={TosLogo} id={"tos-logo"} alt={"logo"}/>
+
+                <Company link={tosLink} 
+                    image={TosLogo} 
+                    id={"tos-logo"}
+                    alt={"logo"}
+                    toDate={"10/2018"}
+                    fromDate={"01/2020"}>
+                </Company>                           
+
+                <Company link={homesideLink}
+                    image={HomesideLogo} 
+                    id={"homeside-logo"} 
+                    alt={"logo"} 
+                    toDate={"09/2017"} 
+                    fromDate={"10/2018"}>
+                </Company>
+
+                <Company link={sgLink} 
+                    image={SoftwareGuildLogo} 
+                    id={"sg-logo"} 
+                    alt={"logo"} 
+                    toDate={"05/2017"} 
+                    fromDate={"08/2017"}>
+                </Company>
             </Outer>
         )
     }

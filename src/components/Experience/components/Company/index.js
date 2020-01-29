@@ -11,13 +11,21 @@ export default class Company extends PureComponent{
             id,
             alt,
             link,
-            image
+            image,
+            toDate,
+            fromDate,
+            children
         } = this.props
 
         return(
             <Outer>
-                <a href={link}><img src={image} id={id} alt={alt} /></a>
-                {this.children}
+                <div id="photo">
+                    <a href={link}><img src={image} id={id} alt={alt} /></a>
+                    <p>{toDate} - {fromDate}</p>
+                </div>
+                <div id="text">
+                    <p>{children}</p>
+                </div>
             </Outer>
         )
     }
