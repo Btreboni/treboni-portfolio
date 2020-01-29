@@ -13,6 +13,10 @@ import Home from './components/Home'
 import About from './components/About'
 import Skills from './components/Skills'
 import Experience from './components/Experience'
+import Katas from './components/Katas'
+
+//Kata components
+import BabySitterKata from './components/Katas/components/BabySitter'
 
 
 class App extends PureComponent {
@@ -39,6 +43,14 @@ class App extends PureComponent {
     return <Experience />
   }
 
+  renderCodingKatas = () => {
+    return <Katas renderBabySitterKata={this.renderBabySitterKata}/>
+  }
+
+  renderBabySitterKata = () => {
+    return <BabySitterKata />
+  }
+
   render() {
     return (
       <div id="App">
@@ -51,6 +63,8 @@ class App extends PureComponent {
                 <Route path="/about" render={this.renderAboutMe} />
                 <Route path="/skills" render={this.renderSkills} />
                 <Route path="/experience" render={this.renderExperience} />
+                <Route path="/katas" render={this.renderCodingKatas} />
+                <Route path="/katas/babySitterKata" render={this.renderBabySitterKata} />
               </Switch>
             </Main>
           </div>

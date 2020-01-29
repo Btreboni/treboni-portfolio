@@ -8,10 +8,20 @@ export default class Katas extends PureComponent{
         this.state = {}
     }
 
+    renderBabySitterKata(){
+        this.props.renderBabySitterKata();
+    } 
+
     render(){
         return(
             <Outer>
-                <h1>KATAS</h1>
+                <ul>
+                    <li>
+                        <button onClick={this.props.renderBabySitterKata}>
+                            BabySitterKata
+                        </button>
+                    </li>
+                </ul>
             </Outer>
         )
     }
