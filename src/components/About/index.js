@@ -26,16 +26,16 @@ export default class About extends PureComponent {
 				<Abouthead>The Man, the Myth, the Developer</Abouthead>
 				<AboutTitle>What do I do?</AboutTitle>
 				<AboutBio>I am a full stack web developer located out of Columbus, Ohio. Over the last {years} years, 
-					I have worked primarily with C#/.NET & Core web API, React, and AngularJS. 
+					working in both the private and public sectors, I have primarily with C#/.NET & Core web API, React, and AngularJS. 
 				</AboutBio>
 				<AboutTitle>What do I do in my free time?</AboutTitle>
 				<AboutBio>
-					I absolutely love to cook. My favorite dish has to be Chicken Marsala, hands down. This dish has simple
+					I absolutely love to cook. My favorite dish has to be Chicken Marsala. This dish has simple
 					ingredients, but the final product is delicious.
 				</AboutBio>
 				<AboutBio>
 					I also enjoy playing the guitar. I am self taught (which means not very good), and my favorite guitarist
-					is John Frusciante of the Red Hot Chili Peppers. His playing style has always fascinated me, because he plays
+					is John Frusciante of the Red Hot Chili Peppers. His playing style has always fascinated me, because he uses
 					the triad chord progression; which is the same playing style used by Jimi Hendrix and John Mayor.
 				</AboutBio>
 			</Outer>

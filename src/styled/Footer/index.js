@@ -10,9 +10,9 @@ export default class Footer extends PureComponent {
 			<Outer>
 				<Inner>
 					<ul>
-						<li>
+						{/* <li>
 							<a href="https://www.facebook.com/profile.php?id=12332416" className="fa fa-facebook" />
-						</li>
+						</li> */}
 						<li>
 							<a href="https://www.linkedin.com/in/burke-treboni-39573666/" className="fa fa-linkedin" />
 						</li>
