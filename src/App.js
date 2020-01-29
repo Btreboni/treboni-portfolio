@@ -67,9 +67,9 @@ class App extends PureComponent {
                 <Route path="/katas/babySitterKata" render={this.renderBabySitterKata} />
               </Switch>
             </Main>
+            <Footer />
           </div>
         </BrowserRouter>
-        <Footer />
       </div>
     );
   }
