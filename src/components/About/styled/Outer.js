@@ -5,6 +5,10 @@ const Outer = styled.div`
     padding-top: 10px;
     padding-bottom: 60px;
 
+    h1, h2, h3, h4 {
+        font-family: 'Overpass Mono', monospace , sans-serif;
+    }
+
     h4 {
         align: center;
         text-align: center;
