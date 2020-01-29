@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Outer = styled.div`
     min-height: 100%
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 60px;
 
     #intro {
