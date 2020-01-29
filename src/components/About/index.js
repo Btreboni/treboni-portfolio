@@ -3,8 +3,10 @@ import React, { PureComponent } from 'react'
 //styled
 import Outer from './styled/Outer'
 import AboutBio from './styled/AboutBio'
-import Abouthead from './styled/AboutHead'
 import AboutTitle from './styled/AboutTitle'
+
+//components
+import FancyTitle from '../../styled/FancyTitle'
 
 export default class About extends PureComponent {
 	constructor(props) {
@@ -23,7 +25,7 @@ export default class About extends PureComponent {
 
 		return (
 			<Outer>
-				<Abouthead>The Man, the Myth, the Developer</Abouthead>
+				<FancyTitle>The Man, the Myth, the Developer</FancyTitle>
 				<AboutTitle>What do I do?</AboutTitle>
 				<AboutBio>I am a full stack web developer located out of Columbus, Ohio. Over the last {years} years, 
 					working in both the private and public sectors, I have primarily with C#/.NET & Core web API, React, and AngularJS. 

@@ -3,6 +3,10 @@ import React, { PureComponent } from 'react'
 //styled
 import Outer from './styled/Outer'
 
+//components
+import Company from './components/Company/'
+import FancyTitle from '../../styled/FancyTitle'
+
 //images
 import SoftwareGuildLogo from './images/software-guild-logo.png'
 import HomesideLogo from './images/homeside-logo.jpg'
@@ -18,22 +22,13 @@ export default class Experience extends PureComponent {
     render() {
         return (
             <Outer>
-                <h2>Experience</h2>
-                <ul>
-                    <li>
-                        <a href={sgLink}><img src={SoftwareGuildLogo} id="sg-logo" alt="logo" /></a>
-                    </li>
-                    <li>
-                        <a href={hmbLink}><img src={HMBLogo} id="hmb-logo" alt="logo" /></a>
-                    </li>
-                    <li>
-                        <a href={homesideLink}><img src={HomesideLogo} id="homeside-logo" alt="logo" /></a>
-                    </li>
-                    <li>
-                        <a href={tosLink}><img src={TosLogo} id="tos-logo" alt="logo" /></a>
-                    </li>
-                </ul>
-
+                <FancyTitle>Experience</FancyTitle>
+                <Company link={sgLink} image={SoftwareGuildLogo} id={"sg-logo"} alt={"logo"}>
+                    Testing Testing Testing
+                </Company>
+                <Company link={hmbLink} image={HMBLogo} id={"hmb-logo"} alt={"logo"}/>
+                <Company link={homesideLink} image={HomesideLogo} id={"homeside-logo"} alt={"logo"}/>
+                <Company link={tosLink} image={TosLogo} id={"tos-logo"} alt={"logo"}/>
             </Outer>
         )
     }
