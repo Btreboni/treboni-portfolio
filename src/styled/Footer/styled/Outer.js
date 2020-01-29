@@ -5,7 +5,7 @@ const Outer = styled.footer`
     width: 100%;
     background-attachment: fixed;
     background-position: 0% 0%;
-    background: grey;
+    background: #FB5800;
     position: fixed;
     bottom: 0pt;
     left: 0pt;
