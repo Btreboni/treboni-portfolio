@@ -13,10 +13,19 @@ import HomesideLogo from './images/homeside-logo.jpg'
 import HMBLogo from './images/hmb-logo.png'
 import TosLogo from './images/tos-logo.png'
 
+//image links
 const sgLink = "https://www.thesoftwareguild.com/gateway/?utm_medium=ppc&utm_source=google&tid=2805597&utm_campaign=Gateway_B_Search&utm_term=the%20software%20guild&utm_content=c_g_e_64082140246_329155038136&gclid=Cj0KCQiAk-7jBRD9ARIsAEy8mh6PqoEpxWNYzWel7TwgONptJN0oMWQFK9LWkorSnb0IxJJTY3JPMaIaAn-wEALw_wcB";
 const hmbLink = "https://www.hmbnet.com/";
 const homesideLink = "https://www.gohomeside.com/";
 const tosLink = "https://opcs.ohio.gov/";
+
+//company role description arrays
+const sgRoles = [
+    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
+    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
+    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
+    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development"
+];
 
 export default class Experience extends PureComponent {
     render() {
@@ -29,7 +38,6 @@ export default class Experience extends PureComponent {
                     alt={"logo"} 
                     toDate={"10/2018"} 
                     fromDate={"Present"}>
-                    TEXT GOES HERE!
                 </Company>
 
                 <Company link={tosLink} 
@@ -53,7 +61,8 @@ export default class Experience extends PureComponent {
                     id={"sg-logo"} 
                     alt={"logo"} 
                     toDate={"05/2017"} 
-                    fromDate={"08/2017"}>
+                    fromDate={"08/2017"}
+                    textList={sgRoles}>
                 </Company>
             </Outer>
         )
