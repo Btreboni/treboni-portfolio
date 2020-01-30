@@ -5,15 +5,25 @@ import Outer from './styled/Outer'
 
 export default class Company extends PureComponent{
 
-    displayList = () => {
-        debugger
+    displayRoles = () => {
         let textList = this.props.textList;
         return <ul>
-            {textList.map((item) => 
-                <li>{item}</li>
+            {textList.map((text) => 
+                <li key={text.key}>{text.description}</li>
             )}
         </ul>
     }
+
+    displayTech = () => {
+        debugger
+        let techList = this.props.techList;
+        return <ul>
+            {techList.map((tech) => 
+            <li key={tech.key}>{tech.description}</li>)}
+        </ul>
+    }
+
+
 
     render(){
 
@@ -21,22 +31,31 @@ export default class Company extends PureComponent{
             id,
             alt,
             link,
+            city,
+            state,
             image,
             toDate,
             fromDate
         } = this.props
 
-        let displayList = this.displayList();
+        let displayRoles = this.displayRoles();
+        let displayTech = this.displayTech();
 
         return(
             <Outer>
                 <div className="tableRow">
                     <div className="join" id="photo">
                         <a href={link}><img src={image} id={id} alt={alt} /></a>
-                        <p>{toDate} - {fromDate}</p>
+                        <div className="dateLocation">
+                            <p>{toDate} - {fromDate}</p>
+                            <p>{city}, {state}</p>
+                        </div>
                     </div>
                     <div className="join" id="text">
-                    {displayList}  
+                        <p>Description</p>
+                        {displayRoles}
+                        <p>Languages and Frameworks</p>
+                        {displayTech}  
                     </div>
                 </div>
             </Outer>

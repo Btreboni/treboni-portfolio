@@ -31,6 +31,10 @@ const Outer = styled.div`
         list-style-type: square;
         list-style-position: inside;
     }
+
+    div.dateLocation{
+        margin-top: 2.5%;
+    }
 `
 
 export default Outer

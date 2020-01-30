@@ -20,21 +20,30 @@ const homesideLink = "https://www.gohomeside.com/";
 const tosLink = "https://opcs.ohio.gov/";
 
 //company role description arrays
+const hmbRoles = [
+    { key: 0, description: "http://treasurer.ohio.gov/OPCS" }
+];
+
+const hmbTech = [
+    { key: 0, description: "C#" },
+    { key: 1, description: "AngularJs" },
+    { key: 2, description: "Sql Server" },
+    { key: 3, description: "Rabbit MQ" },
+    { key: 4, description: "Crystal Reports" },
+    { key: 5, description: "Microsoft Azure" }
+];
+
+const tosRoles = [
+    { key: 0, description: "http://treasurer.ohio.gov/OPCS" }
+];
+
+const hsRoles = [
+    { key: 0, description: "http://treasurer.ohio.gov/OPCS" }
+];
+
 const sgRoles = [
-    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development, But here is another test to see what happens."
-    + " Going to keep going until i can figure out if this is working or not.",
-    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
-    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
-    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
-    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
-    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
-    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
-    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
-    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
-    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
-    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
-    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
-    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development"
+    { key: 0, description: "http://treasurer.ohio.gov/OPCS" }
+    
 ];
 
 export default class Experience extends PureComponent {
@@ -48,7 +57,10 @@ export default class Experience extends PureComponent {
                     alt={"logo"} 
                     toDate={"10/2018"} 
                     fromDate={"Present"}
-                    textList={sgRoles}>
+                    city={"Westerville"}
+                    state={"Ohio"}
+                    techList={hmbTech}
+                    textList={hmbRoles}>
                 </Company>
 
                 <Company link={tosLink} 
@@ -57,7 +69,10 @@ export default class Experience extends PureComponent {
                     alt={"logo"}
                     toDate={"10/2018"}
                     fromDate={"01/2020"}
-                    textList={sgRoles}>
+                    city={"Columbus"}
+                    state={"Ohio"}
+                    techList={hmbTech}
+                    textList={tosRoles}>
                 </Company>                           
 
                 <Company link={homesideLink}
@@ -66,7 +81,10 @@ export default class Experience extends PureComponent {
                     alt={"logo"} 
                     toDate={"09/2017"} 
                     fromDate={"10/2018"}
-                    textList={sgRoles}>
+                    city={"New Albany"}
+                    state={"Ohio"}
+                    techList={hmbTech}
+                    textList={hsRoles}>
                 </Company>
 
                 <Company link={sgLink} 
@@ -75,6 +93,9 @@ export default class Experience extends PureComponent {
                     alt={"logo"} 
                     toDate={"05/2017"} 
                     fromDate={"08/2017"}
+                    city={"Akron"}
+                    state={"Ohio"}
+                    techList={hmbTech}
                     textList={sgRoles}>
                 </Company>
             </Outer>
