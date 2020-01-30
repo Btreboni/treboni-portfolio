@@ -21,20 +21,21 @@ const tosLink = "https://opcs.ohio.gov/";
 
 //company role description arrays
 const hmbRoles = [
-    { key: 0, description: "http://treasurer.ohio.gov/OPCS" }
+    { key: 0, description: "As a Consultant, I had the opportunity to work with the Ohio Treasury on the Ohio Pooled Collateral System (OPCS)." },
+    { key: 1, description: "A fast paced work environment, surrounded by industry professionals with an average of 10+ years experience." }
 ];
 
-const hmbTech = [
+const tosRoles = [
+    { key: 0, description: "OPCS allows local governments to have access to information regarding the collateral pledged by their participating financial institutions on a daily basis. OPCS seeks to reduce the administrative burden on local governments while protecting public deposits." }
+];
+
+const tosTech = [
     { key: 0, description: "C#" },
     { key: 1, description: "AngularJs" },
     { key: 2, description: "Sql Server" },
     { key: 3, description: "Rabbit MQ" },
     { key: 4, description: "Crystal Reports" },
     { key: 5, description: "Microsoft Azure" }
-];
-
-const tosRoles = [
-    { key: 0, description: "http://treasurer.ohio.gov/OPCS" }
 ];
 
 const hsRoles = [
@@ -59,7 +60,6 @@ export default class Experience extends PureComponent {
                     fromDate={"Present"}
                     city={"Westerville"}
                     state={"Ohio"}
-                    techList={hmbTech}
                     textList={hmbRoles}>
                 </Company>
 
@@ -71,7 +71,7 @@ export default class Experience extends PureComponent {
                     fromDate={"01/2020"}
                     city={"Columbus"}
                     state={"Ohio"}
-                    techList={hmbTech}
+                    techList={tosTech}
                     textList={tosRoles}>
                 </Company>                           
 
@@ -83,7 +83,7 @@ export default class Experience extends PureComponent {
                     fromDate={"10/2018"}
                     city={"New Albany"}
                     state={"Ohio"}
-                    techList={hmbTech}
+                    // techList={tosTech}
                     textList={hsRoles}>
                 </Company>
 
@@ -95,7 +95,7 @@ export default class Experience extends PureComponent {
                     fromDate={"08/2017"}
                     city={"Akron"}
                     state={"Ohio"}
-                    techList={hmbTech}
+                    // techList={}
                     textList={sgRoles}>
                 </Company>
             </Outer>

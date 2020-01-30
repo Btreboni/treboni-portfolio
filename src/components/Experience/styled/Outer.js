@@ -7,10 +7,6 @@ const Outer = styled.div`
 
     font-family: 'Overpass Mono', monospace , sans-serif;
 
-    h4{
-        font-weight: bold;
-    }
-
     #hmb-logo{
         padding-top: 10%;
     }

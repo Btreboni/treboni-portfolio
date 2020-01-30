@@ -14,6 +14,10 @@ const Outer = styled.div`
         display: table-row;
     }
 
+    div.dateLocation{
+        margin-top: 2.5%;
+    }
+
     #photo{
         width: 25%;
         display: table-cell;
@@ -32,8 +36,17 @@ const Outer = styled.div`
         list-style-position: inside;
     }
 
-    div.dateLocation{
-        margin-top: 2.5%;
+    li{
+        font-size: 17px;
+        font-weight: 400;
+    }
+
+    h4, p {
+        font-weight: bold;
+    }
+
+    p{
+        font-style: italic;
     }
 `
 

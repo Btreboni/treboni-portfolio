@@ -32,11 +32,12 @@ export default class Company extends PureComponent{
             state,
             image,
             toDate,
-            fromDate
+            fromDate,
+            techList
         } = this.props
 
         let displayRoles = this.displayRoles();
-        let displayTech = this.displayTech();
+        let displayTech = techList ? this.displayTech() : '';
 
         return(
             <Outer>
@@ -52,8 +53,12 @@ export default class Company extends PureComponent{
                         <div className="table-cell" id="text">
                             <h4>Description</h4>
                             {displayRoles}
-                            <h4>Languages and Frameworks</h4>
-                            {displayTech}  
+                            {displayTech
+                            ?
+                            <div><h4>Languages and Frameworks</h4>
+                            {displayTech} </div> 
+                            :
+                            ''}
                         </div>
                     </div>
                 </div>
