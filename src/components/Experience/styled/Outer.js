@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 const Outer = styled.div`
 
-    min-height: 100%;
     width: 100%;
+    min-height: 100%;
 
     #hmb-logo{
         padding-top: 10%;
@@ -17,7 +17,8 @@ const Outer = styled.div`
     }
 
     #sg-logo {
-        width: 200px;
+        padding-top: 10%;
+        width: 300px;
         height: 200px;
     }
 

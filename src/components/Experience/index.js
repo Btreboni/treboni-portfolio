@@ -8,7 +8,7 @@ import Company from './components/Company/'
 import FancyTitle from '../../styled/FancyTitle'
 
 //images
-import SoftwareGuildLogo from './images/software-guild-logo.png'
+import SoftwareGuildLogo from './images/software-guild-logo-copy.png'
 import HomesideLogo from './images/homeside-logo.png'
 import HMBLogo from './images/hmb-logo.png'
 import TosLogo from './images/tos-logo.png'
@@ -23,6 +23,15 @@ const tosLink = "https://opcs.ohio.gov/";
 const sgRoles = [
     "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development, But here is another test to see what happens."
     + " Going to keep going until i can figure out if this is working or not.",
+    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
+    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
+    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
+    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
+    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
+    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
+    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
+    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
+    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
     "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
     "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
     "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development"
