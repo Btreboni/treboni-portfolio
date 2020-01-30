@@ -39,7 +39,23 @@ const tosTech = [
 ];
 
 const hsRoles = [
-    { key: 0, description: "http://treasurer.ohio.gov/OPCS" }
+    { key: 0, description: "As a Jr. Developer, my primary role is to work with business leaders to design and build new web services to improve efficiency." },
+    { key: 1, description: "Mentored by the Slayer of Null Reference Exceptions, first of his name." },
+    { key: 2, description: "Nominated to Homeside’s Employee Advisory Council to represent the Software Development & Design department." },
+    { key: 3, description: "Worked with leadership to understand program requirements and translate those requirements into technical designs." },
+    { key: 4, description: "Using React.js, C#/.NetCore, SqlServer, and REST Web API, designed and deployed a web service that served as an employee Portal (Launch). This web application was used to create Flyers for Realtors, and executed CRUD features for Homeside Branch, Employee, Company License, Realtor, and Leadership data." },
+    { key: 5, description: "Using REST Web API, designed and deployed a Funding Manager web service that imported mortgage loan data from Encompass (our Loan Origination System), and built Warehouse Bank specific excel sheets and imports .pdfs that are sent to Warehouse Banks for mortgage loan detail approval." },
+    { key: 6, description: "Designed database tables to supplement back end data and provide custom functionality." },
+    { key: 7, description: "Wrote SQL, DAL, DAO, and business layer code to access, aggregate, and modify back end data." },
+    { key: 8, description: "Worked in an agile environment with weekly design/architecture meetings for future projects." }
+];
+
+const hsTech = [
+    { key: 0, description: "C#/.NetCore" },
+    { key: 1, description: "React JS" },
+    { key: 2, description: "Sql Server" },
+    { key: 3, description: "Encompass API/SDK" },
+    { key: 4, description: "Microsoft Azure" }
 ];
 
 const sgRoles = [
@@ -83,7 +99,7 @@ export default class Experience extends PureComponent {
                     fromDate={"10/2018"}
                     city={"New Albany"}
                     state={"Ohio"}
-                    // techList={tosTech}
+                    techList={hsTech}
                     textList={hsRoles}>
                 </Company>
 

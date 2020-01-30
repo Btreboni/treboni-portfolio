@@ -17,6 +17,15 @@ body {
 #App {
   min-height: 100%;
   position: relative;
+  /* Add the ability to scroll */
+  overflow: auto;
+  /* Hide scrollbar for IE and Edge */
+  -ms-overflow-style: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#App::-webkit-scrollbar {
+  display: none;
 }
 
 #container {
