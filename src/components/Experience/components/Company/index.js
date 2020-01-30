@@ -1,10 +1,19 @@
 import React, { PureComponent}  from 'react'
-import { map } from 'ramda'
 
 //styled
 import Outer from './styled/Outer'
 
 export default class Company extends PureComponent{
+
+    displayList = () => {
+        debugger
+        let textList = this.props.textList;
+        return <ul>
+            {textList.map((item) => 
+                <li>{item}</li>
+            )}
+        </ul>
+    }
 
     render(){
 
@@ -14,26 +23,21 @@ export default class Company extends PureComponent{
             link,
             image,
             toDate,
-            textList,
             fromDate
         } = this.props
 
-        let displayList = function(){
-            return <ul>
-                {textList.map((item) => 
-                    <li>{item}</li>
-                )}
-            </ul>
-        }
+        let displayList = this.displayList();
 
         return(
             <Outer>
-                <div class="join" id="photo">
-                    <a href={link}><img src={image} id={id} alt={alt} /></a>
-                    <p>{toDate} - {fromDate}</p>
-                </div>
-                <div class="join" id="text">
-                  {displayList}  
+                <div className="tableRow">
+                    <div className="join" id="photo">
+                        <a href={link}><img src={image} id={id} alt={alt} /></a>
+                        <p>{toDate} - {fromDate}</p>
+                    </div>
+                    <div className="join" id="text">
+                    {displayList}  
+                    </div>
                 </div>
             </Outer>
         )

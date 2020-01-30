@@ -9,7 +9,7 @@ import FancyTitle from '../../styled/FancyTitle'
 
 //images
 import SoftwareGuildLogo from './images/software-guild-logo.png'
-import HomesideLogo from './images/homeside-logo.jpg'
+import HomesideLogo from './images/homeside-logo.png'
 import HMBLogo from './images/hmb-logo.png'
 import TosLogo from './images/tos-logo.png'
 
@@ -21,7 +21,8 @@ const tosLink = "https://opcs.ohio.gov/";
 
 //company role description arrays
 const sgRoles = [
-    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
+    "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development, But here is another test to see what happens."
+    + " Going to keep going until i can figure out if this is working or not.",
     "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
     "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development",
     "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development"
@@ -37,7 +38,8 @@ export default class Experience extends PureComponent {
                     id={"hmb-logo"} 
                     alt={"logo"} 
                     toDate={"10/2018"} 
-                    fromDate={"Present"}>
+                    fromDate={"Present"}
+                    textList={sgRoles}>
                 </Company>
 
                 <Company link={tosLink} 
@@ -45,7 +47,8 @@ export default class Experience extends PureComponent {
                     id={"tos-logo"}
                     alt={"logo"}
                     toDate={"10/2018"}
-                    fromDate={"01/2020"}>
+                    fromDate={"01/2020"}
+                    textList={sgRoles}>
                 </Company>                           
 
                 <Company link={homesideLink}
@@ -53,7 +56,8 @@ export default class Experience extends PureComponent {
                     id={"homeside-logo"} 
                     alt={"logo"} 
                     toDate={"09/2017"} 
-                    fromDate={"10/2018"}>
+                    fromDate={"10/2018"}
+                    textList={sgRoles}>
                 </Company>
 
                 <Company link={sgLink} 
