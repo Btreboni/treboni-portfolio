@@ -5,6 +5,12 @@ const Outer = styled.div`
     width: 100%;
     height: 100%;
 
+    font-family: 'Overpass Mono', monospace , sans-serif;
+
+    h4{
+        font-weight: bold;
+    }
+
     #hmb-logo{
         padding-top: 10%;
     }
