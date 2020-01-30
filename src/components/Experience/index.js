@@ -59,8 +59,23 @@ const hsTech = [
 ];
 
 const sgRoles = [
-    { key: 0, description: "http://treasurer.ohio.gov/OPCS" }
-    
+    { key: 0, description: "An intensive, fast-paced, immersive software bootcamp focused on full-stack Java development." },
+    { key: 1, description: "750+ hours of coding, solo and working in teams." },
+    { key: 2, description: "200+ hours of discussions on full-stack Java development using the latest OOP and MVC paradigms." },
+    { key: 3, description: "5+ hours a week of individual mentoring to review and discuss code." },
+    { key: 4, description: "Constant practice of Agile development, such as daily stand-up meetings, weekly code reviews, group design exercises, and paired-programming." },
+    { key: 5, description: "Created multiple Java business applications that enabled clients to add, remove, edit, and search clients and orders." },
+    { key: 6, description: "Used Spring MVC framework to develop apps in Java capable of writing/reading orders to file, with input validations and error handling." },
+    { key: 7, description: "Managed versions and controlled workflow with Crucible, JIRA, and BitBucket." },
+    { key: 8, description: "Mentored and instructed by industry professionals with an average of 15 years of experience." }
+];
+
+const sgTech = [
+    { key: 0, description: "Java/Spring" },
+    { key: 1, description: "MySql" },
+    { key: 2, description: "Maven/Apache" },
+    { key: 3, description: "Visual Studio Code / Netbeans" },
+    { key: 4, description: "Jira" }
 ];
 
 export default class Experience extends PureComponent {
@@ -111,7 +126,7 @@ export default class Experience extends PureComponent {
                     fromDate={"08/2017"}
                     city={"Akron"}
                     state={"Ohio"}
-                    // techList={}
+                    techList={sgTech}
                     textList={sgRoles}>
                 </Company>
             </Outer>
