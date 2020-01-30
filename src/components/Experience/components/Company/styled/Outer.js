@@ -1,33 +1,33 @@
 import styled from 'styled-components'
 
 const Outer = styled.div`
-    width: 100%;
-    height: 100%;
-
-    div.join{
+    
+    div.table{
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
         display: table;
     }
 
-    div.tableRow{
+    div.table-row{
+        width: 100%;
         display: table-row;
     }
 
     #photo{
         width: 25%;
-        height: 100%;
         display: table-cell;
     }
 
     #text{
-        width: 50%;
-        height: 100%;
+        width: 40%;
         display: table-cell;
     }
 
     ul{
+        text-align: left;
         padding-left: 1%;
         padding-right: 1%;
-        text-align: left;
         list-style-type: square;
         list-style-position: inside;
     }

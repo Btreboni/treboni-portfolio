@@ -15,15 +15,12 @@ export default class Company extends PureComponent{
     }
 
     displayTech = () => {
-        debugger
         let techList = this.props.techList;
         return <ul>
             {techList.map((tech) => 
             <li key={tech.key}>{tech.description}</li>)}
         </ul>
     }
-
-
 
     render(){
 
@@ -43,19 +40,21 @@ export default class Company extends PureComponent{
 
         return(
             <Outer>
-                <div className="tableRow">
-                    <div className="join" id="photo">
-                        <a href={link}><img src={image} id={id} alt={alt} /></a>
-                        <div className="dateLocation">
-                            <p>{toDate} - {fromDate}</p>
-                            <p>{city}, {state}</p>
+                <div className="table">
+                    <div className="table-row">
+                        <div className="table-cell" id="photo">
+                            <a href={link}><img src={image} id={id} alt={alt} /></a>
+                            <div className="dateLocation">
+                                <p>{toDate} - {fromDate}</p>
+                                <p>{city}, {state}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="join" id="text">
-                        <p>Description</p>
-                        {displayRoles}
-                        <p>Languages and Frameworks</p>
-                        {displayTech}  
+                        <div className="table-cell" id="text">
+                            <p>Description</p>
+                            {displayRoles}
+                            <p>Languages and Frameworks</p>
+                            {displayTech}  
+                        </div>
                     </div>
                 </div>
             </Outer>
