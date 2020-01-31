@@ -28,7 +28,7 @@ export default class About extends PureComponent {
 				<FancyTitle>The Man, the Myth, the Developer</FancyTitle>
 				<AboutTitle>What do I do?</AboutTitle>
 				<AboutBio>I am a full stack web developer located out of Columbus, Ohio. Over the last {years} years, 
-					working in both the private and public sectors, I have primarily with C#/.NET & Core web API, React, and AngularJS. 
+					working in both the private and public sectors, I have primarily worked with C#/.NET & Core web API, React, and AngularJS. 
 				</AboutBio>
 				<AboutTitle>What do I do in my free time?</AboutTitle>
 				<AboutBio>
