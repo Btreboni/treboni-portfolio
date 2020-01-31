@@ -12,7 +12,6 @@ export default props => {
 			<Menu>
 				<a className="menu-item" href="/">Home</a>
 				<a className="menu-item" href="/about">About Me</a>
-				<a className="menu-item" href="/skills">Skills</a>
 				<a className="menu-item" href="/experience">Experience</a>
 				<a className="menu-item" href="/katas">Coding Katas</a>
 				<SubMenuItem>

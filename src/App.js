@@ -11,7 +11,6 @@ import Footer from './styled/Footer'
 import SideBar from './components/SideBar'
 import Home from './components/Home'
 import About from './components/About'
-import Skills from './components/Skills'
 import Experience from './components/Experience'
 import Katas from './components/Katas'
 
@@ -33,10 +32,6 @@ class App extends PureComponent {
 
   renderAboutMe = () => {
     return <About />
-  }
-
-  renderSkills = () => {
-    return <Skills />
   }
 
   renderExperience = () => {
@@ -61,7 +56,6 @@ class App extends PureComponent {
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/about" render={this.renderAboutMe} />
-                <Route path="/skills" render={this.renderSkills} />
                 <Route path="/experience" render={this.renderExperience} />
                 <Route path="/katas" render={this.renderCodingKatas} />
                 <Route path="/katas/babySitterKata" render={this.renderBabySitterKata} />
