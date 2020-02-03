@@ -43,6 +43,7 @@ class App extends PureComponent {
   }
 
   renderBabySitterKata = () => {
+    debugger
     return <BabySitterKata />
   }
 

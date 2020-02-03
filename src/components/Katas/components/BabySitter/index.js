@@ -5,7 +5,6 @@ import Outer from './styled/Outer'
 
 //components
 import PopupModal from '../InfoPopupModal'
-import InfoPopupModal from '../InfoPopupModal';
 
 export default class BabySitterKata extends PureComponent {
     constructor(props){
@@ -18,7 +17,6 @@ export default class BabySitterKata extends PureComponent {
     render(){
         return(
             <Outer>
-                <InfoPopupModal />
                 <h1>TESTING</h1>
             </Outer>
         )
