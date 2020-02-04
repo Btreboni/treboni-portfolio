@@ -15,12 +15,16 @@ export default class Katas extends PureComponent{
         }
     }
 
-    handleKataChange = (key) => (e) =>{
+    handleKataChange = (key) => (e) => {
         debugger
-        e.preventDefault()
+        e.preventDefault();
         let test = e.target.value;
         debugger
-        this.setState({ [key]: test})
+        this.setState({ [key]: test});
+    }
+
+    hideKatas = () => {
+        this.setState({displayBabySitterKata: false});
     }
 
     render(){
@@ -28,17 +32,26 @@ export default class Katas extends PureComponent{
             displayBabySitterKata
         } = this.state
 
+        console.log("Render Function: " + displayBabySitterKata);
+
         return(
             <Outer>
+                {
+                !displayBabySitterKata
+                ?
                 <div className="buttonRow">
                     <button value={displayBabySitterKata ? false : true} onClick={this.change}>
                         BabySitterKata
                     </button>
                 </div>
+                :
+                    null
+                }
                 { 
                 displayBabySitterKata 
                 ?
                     <div className="kataRow">
+                        <button onClick={this.hideKatas}>Back to Katas List</button>
                         <BabySitterKata />
                     </div> 
                 : 
