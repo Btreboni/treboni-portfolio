@@ -16,10 +16,8 @@ export default class Katas extends PureComponent{
     }
 
     handleKataChange = (key) => (e) => {
-        debugger
         e.preventDefault();
         let test = e.target.value;
-        debugger
         this.setState({ [key]: test});
     }
 
