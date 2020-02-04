@@ -41,6 +41,11 @@ const timeOptionsList = [
     {value: "16", display:"4am"}
 ];
 
+//rates
+const startToDownTimeRate = 12;
+const downTimeToMidnightRate = 8;
+const afterMidnightRate = 16;
+
 export default class BabySitterKata extends PureComponent {
     constructor(props){
         super(props)
@@ -50,10 +55,14 @@ export default class BabySitterKata extends PureComponent {
         this.state = {
             showKata: false,
             showTitle: true,
+            displayWage: false,
+            displayDropDownOptions: true,
             //option values
             bedTimeVal: null,
             endTimeVal: null,
-            startTimeVal: null
+            startTimeVal: null,
+            //wage value
+            wage: null
         }
     }
 
@@ -72,23 +81,76 @@ export default class BabySitterKata extends PureComponent {
         const { bedTimeVal, endTimeVal, startTimeVal } = this.state
         let validateHours = startTimeVal > bedTimeVal || startTimeVal > endTimeVal || bedTimeVal > endTimeVal;
         let areHoursNullOrEmpty = startTimeVal === null || bedTimeVal === null || endTimeVal === null;
-        debugger
 
         if(areHoursNullOrEmpty){
             return alert("Sorry, an error occured. Please make sure that all of your start, bed, and end times have been selected.");
         }
 
         if(validateHours){
-            debugger
             return alert("Sorry, an error occured. Please make sure that your hourly time-line is correct.");
         }
 
+        this.calculate(startTimeVal, bedTimeVal, endTimeVal);
+
+    }
+
+    calculate = (startTime, bedTime, endTime) => {
+        let wage;
+
+        //start time to bed time wage, checking to see if downtime was after midnight
+        if(bedTime > 12){
+            wage = this.afterMidnightStartToDownTime(startTime, endTime);
+            return this.convertWageToDisplay(wage);
+        } else {
+            let startToDownTimeWage = this.calculateStartToDownTimeWage(startTime, bedTime);
+
+            //down time to midnight wage, checking to see if downtime was after midnight
+            let downTimeToMidnightWage = this.calculateDowntTimeToMidnightWage(endTime);
+
+            //after midnight wage
+            let afterMidnightWage = this.calculateAfterMidnightWage(endTime);
+
+            //add up wages
+            wage = this.calculateWages(startToDownTimeWage, downTimeToMidnightWage, afterMidnightWage);
+
+            //convert to display
+            return this.convertWageToDisplay(wage);
+        }
+    }
+
+    afterMidnightStartToDownTime = (startTime, endTime) => {
+        let startTimeToMidnight = (12 - startTime) * startToDownTimeRate;
+        let afterMidnight = this.calculateAfterMidnightWage(endTime);
+        let wage = startTimeToMidnight + afterMidnight;
+        return wage;
+    }
+
+    convertWageToDisplay = (wage) => {
+        return Number(wage);
+    }
+
+    calculateAfterMidnightWage = (endTime) => {
+        let wage = endTime < 12 ? 0 : (endTime - 12) * afterMidnightRate;
+        return wage;
+    }
+
+    calculateStartToDownTimeWage = (startTime, bedTime) => {
+        let wage = (bedTime - startTime) * startToDownTimeRate;
+        return wage;
+    }
+
+    calulateWages = (startToDownTimeWage, downTimeToMidnightWage, afterMidnightWage) => {
+        let wage = startToDownTimeWage + downTimeToMidnightWage + afterMidnightWage;
+        return wage;
     }
 
     render(){
         const {
+            wage,
             showKata,
-            showTitle
+            showTitle,
+            displayWage,
+            displayDropDownOptions
         } = this.state
         return(
             <Outer>
@@ -104,17 +166,32 @@ export default class BabySitterKata extends PureComponent {
                     ?
                         <div>
                             <FancyButton handleClick={this.handleTitleChange}>Instructions</FancyButton>
-                            {/* Start time dropdown */}
-                            <FancyDropdown onOptionChange={this.handleStartTimeChange} 
-                                title={startTimeTitle} 
-                                options={timeOptionsList}/>
-                            <FancyDropdown onOptionChange={this.handleBedTimeChange} 
-                                title={bedTimeTitle} 
-                                options={timeOptionsList}/>
-                            <FancyDropdown onOptionChange={this.handleEndTimeChange} 
-                                title={clockOffTitle} 
-                                options={timeOptionsList}/>
-                            <FancyButton handleClick={this.calculateNightlyWage}>Calculate Nightly Wage</FancyButton>
+                            {
+                                displayDropDownOptions
+                                ?
+                                    <div>
+                                        {/* Start time dropdown */}
+                                        <FancyDropdown onOptionChange={this.handleStartTimeChange} 
+                                            title={startTimeTitle} 
+                                            options={timeOptionsList}/>
+                                        <FancyDropdown onOptionChange={this.handleBedTimeChange} 
+                                            title={bedTimeTitle} 
+                                            options={timeOptionsList}/>
+                                        <FancyDropdown onOptionChange={this.handleEndTimeChange} 
+                                            title={clockOffTitle} 
+                                            options={timeOptionsList}/>
+                                        <FancyButton handleClick={this.calculateNightlyWage}>Calculate Nightly Wage</FancyButton>
+                                    </div>
+                                :
+                                    null
+                            }
+                            {
+                                displayWage
+                                ?
+                                    <h1>{wage}</h1>
+                                :
+                                    null
+                            }
                         </div>
                         :
                         null
