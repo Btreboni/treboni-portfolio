@@ -18,7 +18,6 @@ export default class BabySitterKata extends PureComponent {
     handleTitleChange = () => {
         let isShowKata = this.state.showKata ? false : true;
         let isShowTitle = this.state.showTitle ? false : true;
-        debugger
         this.setState({ showKata: isShowKata, showTitle: isShowTitle});
     }
 
@@ -32,7 +31,7 @@ export default class BabySitterKata extends PureComponent {
                 {
                     showTitle
                     ?
-                        <Title />
+                        <Title handleTitleChange={this.handleTitleChange}/>
                     :
                     null
                 }

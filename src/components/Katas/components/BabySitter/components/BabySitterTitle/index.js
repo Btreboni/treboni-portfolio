@@ -12,6 +12,10 @@ export default class BabySitterTitle extends PureComponent{
         }
     }
 
+    handleTitleChange = () => {
+        this.props.handleTitleChange();
+    }
+
     render(){
         return(
             <Outer>

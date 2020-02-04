@@ -53,12 +53,16 @@ export default class Company extends PureComponent{
                         <div className="table-cell" id="text">
                             <h4>Description</h4>
                             {displayRoles}
-                            {displayTech
-                            ?
-                            <div><h4>Languages and Frameworks</h4>
-                            {displayTech} </div> 
-                            :
-                            ''}
+                            {
+                                displayTech
+                                ?
+                                <div>
+                                    <h4>Languages and Frameworks</h4>
+                                    {displayTech} 
+                                </div> 
+                                :
+                                ''
+                            }
                         </div>
                     </div>
                 </div>
