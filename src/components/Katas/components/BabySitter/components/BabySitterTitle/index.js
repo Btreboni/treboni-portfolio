@@ -3,6 +3,9 @@ import React, { PureComponent } from 'react'
 //styled
 import Outer from './styled/Outer'
 
+//components
+import FancyButton from '../../../../../FancyButton'
+
 export default class BabySitterTitle extends PureComponent{
     constructor(props){
         super(props)
@@ -47,7 +50,7 @@ export default class BabySitterTitle extends PureComponent{
                         </li>
                     </ul>
                 </p>
-                <button onClick={this.handleTitleChange}>Continue</button>
+                <FancyButton handleClick={this.handleTitleChange}>Continue</FancyButton>
             </Outer>
         )
     }
