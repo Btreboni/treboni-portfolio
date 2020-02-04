@@ -8,6 +8,11 @@ import FancyButton from '../../../FancyButton'
 import FancyDropdown from '../../../FancyDropdown'
 import Title from './components/BabySitterTitle'
 
+//titles
+const startTimeTitle = "Enter your start time";
+const bedTimeTitle = "Enter what time you will put the children to bed";
+const clockOffTitle = "Enter what time you will clock off ";
+
 //options
 const timeOptionsList = [
     {value: "", display:"Select a time"},
@@ -40,9 +45,14 @@ export default class BabySitterKata extends PureComponent {
     constructor(props){
         super(props)
         this.handleStartTimeChange = this.handleOptionsChange('startTimeVal');
+        this.handleBedTimeChange = this.handleOptionsChange('bedTimeVal');
+        this.handleEndTimeChange = this.handleOptionsChange('endTimeVal');
         this.state = {
             showKata: false,
             showTitle: true,
+            //option values
+            bedTimeVal: null,
+            endTimeVal: null,
             startTimeVal: null
         }
     }
@@ -54,9 +64,7 @@ export default class BabySitterKata extends PureComponent {
     }
 
     handleOptionsChange = (key) => (e) => {
-        let test = e.target.value;
-        debugger;
-        console.log(test);
+        e.preventDefault();
         this.setState({[key]: e.target.value});
     }
 
@@ -80,7 +88,9 @@ export default class BabySitterKata extends PureComponent {
                         <div>
                             <FancyButton handleClick={this.handleTitleChange}>Instructions</FancyButton>
                             {/* Start time dropdown */}
-                            <FancyDropdown onOptionChange={this.handleStartTimeChange} title={"Enter your start time"} options={timeOptionsList}/>
+                            <FancyDropdown onOptionChange={this.handleStartTimeChange} title={startTimeTitle} options={timeOptionsList}/>
+                            <FancyDropdown onOptionChange={this.handleBedTimeChange} title={bedTimeTitle} options={timeOptionsList}/>
+                            <FancyDropdown onOptionChange={this.handleEndTimeChange} title={clockOffTitle} options={timeOptionsList}/>
                         </div>
                         :
                         null
