@@ -68,6 +68,23 @@ export default class BabySitterKata extends PureComponent {
         this.setState({[key]: e.target.value});
     }
 
+    calculateNightlyWage = () => {
+        const { bedTimeVal, endTimeVal, startTimeVal } = this.state
+        let validateHours = startTimeVal > bedTimeVal || startTimeVal > endTimeVal || bedTimeVal > endTimeVal;
+        let areHoursNullOrEmpty = startTimeVal === null || bedTimeVal === null || endTimeVal === null;
+        debugger
+
+        if(areHoursNullOrEmpty){
+            return alert("Sorry, an error occured. Please make sure that all of your start, bed, and end times have been selected.");
+        }
+
+        if(validateHours){
+            debugger
+            return alert("Sorry, an error occured. Please make sure that your hourly time-line is correct.");
+        }
+
+    }
+
     render(){
         const {
             showKata,
@@ -88,9 +105,16 @@ export default class BabySitterKata extends PureComponent {
                         <div>
                             <FancyButton handleClick={this.handleTitleChange}>Instructions</FancyButton>
                             {/* Start time dropdown */}
-                            <FancyDropdown onOptionChange={this.handleStartTimeChange} title={startTimeTitle} options={timeOptionsList}/>
-                            <FancyDropdown onOptionChange={this.handleBedTimeChange} title={bedTimeTitle} options={timeOptionsList}/>
-                            <FancyDropdown onOptionChange={this.handleEndTimeChange} title={clockOffTitle} options={timeOptionsList}/>
+                            <FancyDropdown onOptionChange={this.handleStartTimeChange} 
+                                title={startTimeTitle} 
+                                options={timeOptionsList}/>
+                            <FancyDropdown onOptionChange={this.handleBedTimeChange} 
+                                title={bedTimeTitle} 
+                                options={timeOptionsList}/>
+                            <FancyDropdown onOptionChange={this.handleEndTimeChange} 
+                                title={clockOffTitle} 
+                                options={timeOptionsList}/>
+                            <FancyButton handleClick={this.calculateNightlyWage}>Calculate Nightly Wage</FancyButton>
                         </div>
                         :
                         null
