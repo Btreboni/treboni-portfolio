@@ -41,7 +41,7 @@ export default class Katas extends PureComponent{
                 ?
                 <div className="buttonRow">
                     <button value={displayBabySitterKata ? false : true} onClick={this.change}>
-                        BabySitterKata
+                        Baby Sitter Calculator Kata
                     </button>
                 </div>
                 :
