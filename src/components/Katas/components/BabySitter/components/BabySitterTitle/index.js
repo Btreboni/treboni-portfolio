@@ -26,9 +26,8 @@ export default class BabySitterTitle extends PureComponent{
                 <p>Babysitter Kata Background This kata simulates a babysitter working and getting paid for one night. 
                 The rules are pretty straight forward.
                 </p>
-                <p>
-                The babysitter:
-                    <ul>
+                <p>The babysitter:</p>
+                <ul>
                         <li>
                             Starts no earlier than 5:00PM leaves no later than 4:00AM.
                         </li>
@@ -49,7 +48,6 @@ export default class BabySitterTitle extends PureComponent{
                             calculate my nightly charge.
                         </li>
                     </ul>
-                </p>
                 <FancyButton handleClick={this.handleTitleChange}>Continue</FancyButton>
             </Outer>
         )

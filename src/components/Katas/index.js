@@ -5,7 +5,7 @@ import Outer from './styled/Outer'
 
 //components
 import BabySitterKata from './components/BabySitter'
-import FancyButton from '../FancyButton'
+
 
 export default class Katas extends PureComponent{
     constructor(props){
@@ -30,8 +30,6 @@ export default class Katas extends PureComponent{
         const {
             displayBabySitterKata
         } = this.state
-
-        console.log("Render Function: " + displayBabySitterKata);
 
         return(
             <Outer>
