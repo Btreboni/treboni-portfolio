@@ -5,6 +5,7 @@ import Outer from './styled/Outer'
 
 //components
 import BabySitterKata from './components/BabySitter'
+import FancyButton from '../FancyButton'
 
 export default class Katas extends PureComponent{
     constructor(props){

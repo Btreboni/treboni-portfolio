@@ -4,6 +4,7 @@ import React, {PureComponent} from 'react'
 import Outer from './styled/Outer'
 
 //components
+import FancyButton from '../../../FancyButton'
 import Title from './components/BabySitterTitle'
 
 export default class BabySitterKata extends PureComponent {
@@ -39,7 +40,7 @@ export default class BabySitterKata extends PureComponent {
                     showKata
                     ?
                         <div>
-                            <button onClick={this.handleTitleChange}>Instructions</button>
+                            <FancyButton handleClick={this.handleTitleChange}>Instructions</FancyButton>
                         </div>
                         :
                         null
