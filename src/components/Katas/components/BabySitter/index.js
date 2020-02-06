@@ -15,30 +15,30 @@ const clockOffTitle = "Enter what time you will clock off ";
 
 //options
 const timeOptionsList = [
-    {value: "", display:"Select a time"},
-    {value: "5", display:"5pm"},
-    {value: "5.5", display:"5:30pm"},
-    {value: "6", display:"6pm"},
-    {value: "6.5", display:"6:30pm"},
-    {value: "7", display:"7pm"},
-    {value: "7.5", display:"7:30pm"},
-    {value: "8", display:"8pm"},
-    {value: "8.5", display:"8:30pm"},
-    {value: "9", display:"9pm"},
-    {value: "9.5", display:"9:30pm"},
-    {value: "10", display:"10pm"},
-    {value: "10.5", display:"10:30pm"},
-    {value: "11", display:"11pm"},
-    {value: "11.5", display:"11:30pm"},
-    {value: "12", display:"12am"},
-    {value: "12.5", display:"12:30am"},
-    {value: "13", display:"1am"},
-    {value: "13.5", display:"1:30am"},
-    {value: "14", display:"2am"},
-    {value: "14.5", display:"2:30am"},
-    {value: "15", display:"3am"},
-    {value: "15.5", display:"3:30am"},
-    {value: "16", display:"4am"}
+    {value: 0, display:"Select a time"},
+    {value: 5, display:"5pm"},
+    {value: 5.5, display:"5:30pm"},
+    {value: 6, display:"6pm"},
+    {value: 6.5, display:"6:30pm"},
+    {value: 7, display:"7pm"},
+    {value: 7.5, display:"7:30pm"},
+    {value: 8, display:"8pm"},
+    {value: 8.5, display:"8:30pm"},
+    {value: 9, display:"9pm"},
+    {value: 9.5, display:"9:30pm"},
+    {value: 10, display:"10pm"},
+    {value: 10.5, display:"10:30pm"},
+    {value: 11, display:"11pm"},
+    {value: 11.5, display:"11:30pm"},
+    {value: 12, display:"12am"},
+    {value: 12.5, display:"12:30am"},
+    {value: 13, display:"1am"},
+    {value: 13.5, display:"1:30am"},
+    {value: 14, display:"2am"},
+    {value: 14.5, display:"2:30am"},
+    {value: 15, display:"3am"},
+    {value: 15.5, display:"3:30am"},
+    {value: 16, display:"4am"}
 ];
 
 //rates
@@ -52,6 +52,7 @@ export default class BabySitterKata extends PureComponent {
         this.handleStartTimeChange = this.handleOptionsChange('startTimeVal');
         this.handleBedTimeChange = this.handleOptionsChange('bedTimeVal');
         this.handleEndTimeChange = this.handleOptionsChange('endTimeVal');
+        // this.handleNextJobButton = this.handleNextJob();
         this.state = {
             showKata: false,
             showTitle: true,
@@ -66,22 +67,32 @@ export default class BabySitterKata extends PureComponent {
         }
     }
 
+    handleNextJob = () => {
+        debugger
+        this.setState({ wage: null, displayWage: false, showKata: false, 
+            showTitle: true, displayDropDownOptions: true, bedTimeVal: null, endTimeVal: null, starttimeval: null });
+    }
+
     handleTitleChange = () => {
         let isShowKata = this.state.showKata ? false : true;
         let isShowTitle = this.state.showTitle ? false : true;
-        this.setState({ showKata: isShowKata, showTitle: isShowTitle});
+        this.setState({ showKata: isShowKata, showTitle: isShowTitle, wage: null, displayWage: false});
     }
 
     handleOptionsChange = (key) => (e) => {
         e.preventDefault();
-        this.setState({[key]: e.target.value});
+        let convertTarget = parseFloat(e.target.value);
+        this.setState({[key]: convertTarget});
     }
 
     calculateNightlyWage = () => {
-        const { bedTimeVal, endTimeVal, startTimeVal } = this.state
+        const { 
+            bedTimeVal, 
+            endTimeVal, 
+            startTimeVal 
+        } = this.state
         let validateHours = startTimeVal > bedTimeVal || startTimeVal > endTimeVal || bedTimeVal > endTimeVal;
-        let areHoursNullOrEmpty = startTimeVal === null || bedTimeVal === null || endTimeVal === null;
-
+        let areHoursNullOrEmpty = startTimeVal === 0 || bedTimeVal === 0 || endTimeVal === 0;
         if(areHoursNullOrEmpty){
             return alert("Sorry, an error occured. Please make sure that all of your start, bed, and end times have been selected.");
         }
@@ -105,16 +116,19 @@ export default class BabySitterKata extends PureComponent {
             let startToDownTimeWage = this.calculateStartToDownTimeWage(startTime, bedTime);
 
             //down time to midnight wage, checking to see if downtime was after midnight
-            let downTimeToMidnightWage = this.calculateDowntTimeToMidnightWage(endTime);
+            let downTimeToMidnightWage = this.calculateDowntTimeToMidnightWage(bedTime);
 
             //after midnight wage
             let afterMidnightWage = this.calculateAfterMidnightWage(endTime);
 
             //add up wages
-            wage = this.calculateWages(startToDownTimeWage, downTimeToMidnightWage, afterMidnightWage);
+            let calcWage = this.calculateWages(startToDownTimeWage, downTimeToMidnightWage, afterMidnightWage);
 
             //convert to display
-            return this.convertWageToDisplay(wage);
+            wage = this.convertWageToDisplay(calcWage);
+            debugger
+            //set state re render
+            this.setState({ wage: wage, displayDropDownOptions: false, displayWage: true });
         }
     }
 
@@ -139,9 +153,13 @@ export default class BabySitterKata extends PureComponent {
         return wage;
     }
 
-    calulateWages = (startToDownTimeWage, downTimeToMidnightWage, afterMidnightWage) => {
-        let wage = startToDownTimeWage + downTimeToMidnightWage + afterMidnightWage;
+    calculateDowntTimeToMidnightWage = (bedTime) => {
+        let wage = bedTime > 12 ? 0 : (12 - bedTime) * downTimeToMidnightRate;
         return wage;
+    }
+
+    calculateWages = (startToDownTimeWage, downTimeToMidnightWage, afterMidnightWage) => {
+        return startToDownTimeWage + downTimeToMidnightWage + afterMidnightWage;
     }
 
     render(){
@@ -188,7 +206,10 @@ export default class BabySitterKata extends PureComponent {
                             {
                                 displayWage
                                 ?
-                                    <h1>{wage}</h1>
+                                    <div>
+                                        <h1>{`$${wage}`}</h1>
+                                        <FancyButton handleClick={this.handleNextJob}>Calculate Another Job?</FancyButton>
+                                    </div>
                                 :
                                     null
                             }
