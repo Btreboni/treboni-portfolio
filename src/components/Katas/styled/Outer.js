@@ -3,6 +3,10 @@ import styled from 'styled-components'
 const Outer = styled.div`
     margin: 8% auto 0px auto;
 
+    .kataListButton {
+        margin-bottom: 20px;
+    }
+
     button{
         padding: 8px;
         color: black;

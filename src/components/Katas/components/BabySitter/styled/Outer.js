@@ -6,6 +6,12 @@ const Outer = styled.div`
     p {
         font-size: 18px;
     }
+
+    .dropdown {
+        button{
+            margin-top: 25px;
+        }
+    }
 `
 
 export default Outer

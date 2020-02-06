@@ -48,7 +48,7 @@ export default class Katas extends PureComponent{
                 displayBabySitterKata 
                 ?
                     <div className="kataRow">
-                        <button onClick={this.hideKatas}>Back to Katas List</button>
+                        <button className="kataListButton" onClick={this.hideKatas}>Back to Katas List</button>
                         <BabySitterKata />
                     </div> 
                 : 
