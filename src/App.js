@@ -16,6 +16,7 @@ import Katas from './components/Katas'
 
 //Kata components
 import BabySitterKata from './components/Katas/components/BabySitter'
+import RockPaperScissorsKata from './components/Katas/components/RockPaperScissors'
 
 
 class App extends PureComponent {
@@ -39,6 +40,7 @@ class App extends PureComponent {
   }
 
   renderCodingKatas = () => {
+    debugger
     return <Katas renderBabySitterKata={this.renderBabySitterKata}/>
   }
 
@@ -47,19 +49,24 @@ class App extends PureComponent {
     return <BabySitterKata />
   }
 
+  renderRPCKata = () =>{
+    return <RockPaperScissorsKata />
+  }
+
   render() {
     return (
       <div id="App">
         <BrowserRouter>
           <div id="container">
-            <SideBar />
+            <SideBar babysitterKata={this.renderBabySitterKata}/>
             <Main>
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/about" render={this.renderAboutMe} />
                 <Route path="/experience" render={this.renderExperience} />
                 <Route path="/katas" render={this.renderCodingKatas} />
-                <Route path="/katas/babySitterKata" render={this.renderBabySitterKata} />
+                <Route path="/babySitterKata" render={this.renderBabySitterKata} />
+                <Route path="/rockPaperScissorsKata" render={this.renderRPCKata} />
               </Switch>
             </Main>
             <Footer />

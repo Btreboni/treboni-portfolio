@@ -4,6 +4,7 @@ const Outer = styled.div`
     a { 
         text-decoration: none;
         vertical-align: top;
+        display: block;
     }
 
     i{

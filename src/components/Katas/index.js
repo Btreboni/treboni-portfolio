@@ -10,50 +10,18 @@ import BabySitterKata from './components/BabySitter'
 export default class Katas extends PureComponent{
     constructor(props){
         super(props)
-        this.change = this.handleKataChange('displayBabySitterKata');
         this.state = {
-            displayBabySitterKata: false
+            
         }
     }
 
-    handleKataChange = (key) => (e) => {
-        e.preventDefault();
-        let test = e.target.value;
-        this.setState({ [key]: test});
-    }
-
-    hideKatas = () => {
-        this.setState({displayBabySitterKata: false});
-    }
-
     render(){
-        const {
-            displayBabySitterKata
-        } = this.state
 
         return(
             <Outer>
-                {
-                !displayBabySitterKata
-                ?
                 <div className="buttonRow">
-                    <button value={displayBabySitterKata ? false : true} onClick={this.change}>
-                        Baby Sitter Calculator Kata
-                    </button>
+                    <button className="kataListButton"><a href="/babySitterKata">Baby Sitter Calculator Kata</a></button>
                 </div>
-                :
-                    null
-                }
-                { 
-                displayBabySitterKata 
-                ?
-                    <div className="kataRow">
-                        <button className="kataListButton" onClick={this.hideKatas}>Back to Katas List</button>
-                        <BabySitterKata />
-                    </div> 
-                : 
-                    null
-                }
             </Outer>
         )
     }
