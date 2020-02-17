@@ -25,8 +25,11 @@ export default class RockPaperScissors extends PureComponent{
         }
     }
 
-    handleChange = (key) => {
-        this.setState({key: true})
+    handleChange = (key) => (e) => {
+        let test = key;
+        let testt = e.target.value;
+        debugger
+        this.setState({[key]: true})
     }
 
     // clearSelection(){
@@ -34,11 +37,13 @@ export default class RockPaperScissors extends PureComponent{
     // }
 
     render(){
+    
+        console.log(this.state)
         return(
             <Outer>
-                <ImageButton img={rock} width={100} height={100} onClick={this.handleRock}/>
-                <ImageButton img={paper} width={100} heigh={100} onClick={this.handlePaper}/>
-                <ImageButton img={scissors} width={125} heigh={125} onClick={this.handleScissors}/>
+                <ImageButton img={rock} handleChange={this.handleRock}/>
+                <ImageButton img={paper} handleChange={this.handlePaper}/>
+                <ImageButton img={scissors} handleChange={this.handleScissors}/>
             </Outer>
         )
     }

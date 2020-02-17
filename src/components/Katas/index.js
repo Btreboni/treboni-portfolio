@@ -3,10 +3,6 @@ import React from 'react'
 //styled
 import Outer from './styled/Outer'
 
-//components
-import BabySitterKata from './components/BabySitter'
-
-
 export default props => {
         return(
             <Outer>

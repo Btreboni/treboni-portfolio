@@ -52,7 +52,6 @@ export default class BabySitterKata extends PureComponent {
         this.handleStartTimeChange = this.handleOptionsChange('startTimeVal');
         this.handleBedTimeChange = this.handleOptionsChange('bedTimeVal');
         this.handleEndTimeChange = this.handleOptionsChange('endTimeVal');
-        // this.handleNextJobButton = this.handleNextJob();
         this.state = {
             showKata: false,
             showTitle: true,

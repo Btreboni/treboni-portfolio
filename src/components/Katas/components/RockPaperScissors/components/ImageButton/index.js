@@ -4,31 +4,24 @@ import React, {PureComponent} from 'react'
 import Outer from './styled/Outer'
 
 export default class ImageButton extends PureComponent{
-    constructor(props){
-        super(props)
-        this.state = {};
-    }
 
-    handleGameChange(){
+    handleGameChange = (e) =>{
         debugger
-        console.log('test');
-        // this.props.handleChange()
+        this.props.handleChange(e);
     }
 
     render(){
 
-        let test = this.props;
-        debugger
-
         const {
             img,
-            width,
-            height
+            value
         } = this.props
 
+        let test = this.props;
+        console.log(test)
 
         return(
-            <Outer src={img} width={width} height={height} onClick={this.handleGameChange}/>
+            <Outer src={img} onClick={this.handleGameChange} value={value}/>
         )
     }
 }
