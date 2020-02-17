@@ -175,6 +175,7 @@ export default class BabySitterKata extends PureComponent {
             displayWage,
             displayDropDownOptions
         } = this.state
+        
         return(
             <Outer>
                 {
