@@ -5,11 +5,30 @@ import Outer from './styled/Outer'
 
 //components
 import ImageButton from './components/ImageButton'
+import WinLossRow from './components/WinLossRow'
 
 //image sources
-import paper from './images/paper.png'
-import rock from './images/rock.png'
-import scissors from './images/scissors.png'
+import paperImg from './images/paper.png'
+import rockImg from './images/rock.png'
+import scissorsImg from './images/scissors.png'
+
+const rockObj = {
+    id: 1,
+    img: rockImg,
+    title: "Rock"
+};
+
+const paperObj = {
+    id: 2,
+    img: paperImg,
+    title: "Paper"
+};
+
+const scissorsObj = {
+    id: 3,
+    img: scissorsImg,
+    title: "Scissors"
+};
 
 
 export default class RockPaperScissors extends PureComponent{
@@ -26,24 +45,60 @@ export default class RockPaperScissors extends PureComponent{
     }
 
     handleChange = (key) => (e) => {
-        let test = key;
-        let testt = e.target.value;
-        debugger
         this.setState({[key]: true})
     }
 
-    // clearSelection(){
-    //     this.setState({rock: false, paper: false, scissors: false})
-    // }
+    renderRPCRow = (state) =>{
+        if(state.rock || state.paper || state.scissors){
+            return true;
+        }
+
+        return false;
+    }
+
+    userChoice = (state) =>{
+        return state.rock ? rockObj : state.paper ? paperObj : scissorsObj
+    }
+
+    cpuChoice = () => {
+        let choiceArr = [rockObj, paperObj, scissorsObj];
+        return choiceArr[Math.floor(Math.random() * choiceArr.length)]
+    }
+
+    declareWinner = (user, cpu) => {
+        // 0 draw, 1 user win, 2 cpu win
+        return user === cpu ? 0 : user.id === 1 && cpu.id === 3 ? 1 : user.id === 2 && cpu.id === 1 
+        ? 1 : user.id === 3 && cpu.id === 1 ? 1 : 0;
+    }
+
+    clearSelection(){
+        this.setState({rock: false, paper: false, scissors: false})
+    }
 
     render(){
-    
-        console.log(this.state)
+
+        let renderRPCRow = this.renderRPCRow(this.state)
+        let userChoice = renderRPCRow ? this.userChoice(this.state) : null;
+        let cpuChoice = renderRPCRow ? this.cpuChoice(this.state) : null;
+        let winner = renderRPCRow ? this.cpuChoice(this.state) : null;
+
         return(
             <Outer>
-                <ImageButton img={rock} handleChange={this.handleRock}/>
-                <ImageButton img={paper} handleChange={this.handlePaper}/>
-                <ImageButton img={scissors} handleChange={this.handleScissors}/>
+                {
+                    renderRPCRow ?
+                    <div>
+                        <WinLossRow userChoice={userChoice} cpuChoice={cpuChoice} winner={winner}/>
+                    </div>
+
+                    :
+                
+                    <div>
+                        <ImageButton img={rockImg} handleChange={this.handleRock}/>
+                        <ImageButton img={paperImg} handleChange={this.handlePaper}/>
+                        <ImageButton img={scissorsImg} handleChange={this.handleScissors}/>
+                    </div>
+                    
+                }
             </Outer>
         )
     }
