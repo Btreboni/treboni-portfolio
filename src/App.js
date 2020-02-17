@@ -40,12 +40,10 @@ class App extends PureComponent {
   }
 
   renderCodingKatas = () => {
-    debugger
-    return <Katas renderBabySitterKata={this.renderBabySitterKata}/>
+    return <Katas/>
   }
 
   renderBabySitterKata = () => {
-    debugger
     return <BabySitterKata />
   }
 

@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react'
+import React from 'react'
 
 //styled
 import Outer from './styled/Outer'
@@ -7,22 +7,13 @@ import Outer from './styled/Outer'
 import BabySitterKata from './components/BabySitter'
 
 
-export default class Katas extends PureComponent{
-    constructor(props){
-        super(props)
-        this.state = {
-            
-        }
-    }
-
-    render(){
-
+export default props => {
         return(
             <Outer>
                 <div className="buttonRow">
-                    <button className="kataListButton"><a href="/babySitterKata">Baby Sitter Calculator Kata</a></button>
+                    <button><a href="/babySitterKata">Baby Sitter Calculator</a></button>
+                    <button><a href="/rockPaperScissorsKata">Rock Paper Scissors</a></button>
                 </div>
             </Outer>
         )
-    }
 }
