@@ -1,7 +1,12 @@
 import styled from 'styled-components'
 
 const Outer = styled.div`
-    margin-top: 25%
+    margin-top: auto;
+    margin-top: 14%;
+
+    h1{
+        margin-bottom: 3%;
+    }
     
     img{
         border-radius: 25%;
@@ -9,6 +14,10 @@ const Outer = styled.div`
 
     img:hover{
         border-radius: 40%;
+    }
+
+    .winDiv{
+        align: center;
     }
 `
 
