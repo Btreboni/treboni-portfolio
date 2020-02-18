@@ -17,15 +17,10 @@ import Katas from './components/Katas'
 //Kata components
 import BabySitterKata from './components/Katas/components/BabySitter'
 import RockPaperScissorsKata from './components/Katas/components/RockPaperScissors'
+import StockAvgCalc from './components/Katas/components/StockAvgCalc'
 
 
 class App extends PureComponent {
-  constructor(props) {
-    super(props)
-    this.state = {
-
-    }
-  }
 
   renderHome = () => {
     return <Home />
@@ -51,6 +46,10 @@ class App extends PureComponent {
     return <RockPaperScissorsKata />
   }
 
+  renderStockCalc = () =>{
+    return <StockAvgCalc />
+  }
+
   render() {
     return (
       <div id="App">
@@ -65,6 +64,8 @@ class App extends PureComponent {
                 <Route path="/katas" render={this.renderCodingKatas} />
                 <Route path="/babySitterKata" render={this.renderBabySitterKata} />
                 <Route path="/rockPaperScissorsKata" render={this.renderRPCKata} />
+                <Route path="/stockPriceAvg" render={this.renderStockCalc} />
+                stockPriceAvg
               </Switch>
             </Main>
             <Footer />

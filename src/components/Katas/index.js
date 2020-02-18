@@ -9,6 +9,7 @@ export default props => {
                 <div className="buttonRow">
                     <button><a href="/babySitterKata">Baby Sitter Calculator</a></button>
                     <button><a href="/rockPaperScissorsKata">Rock Paper Scissors</a></button>
+                    <button><a href="/stockPriceAvg">Average Stock Price Calculator</a></button>
                 </div>
             </Outer>
         )

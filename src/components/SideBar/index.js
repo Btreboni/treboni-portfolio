@@ -27,6 +27,7 @@ export default class SideBar extends PureComponent {
 					<SubMenuItem>
 						<a className="menu-item" href="/babySitterKata">Baby Sitter Kata</a>
 						<a className="menu-item" href="/rockPaperScissorsKata">Rock Paper Scissors</a>
+						<a className="menu-item" href="/stockPriceAvg">Average Stock Price Calculator</a>
 					</SubMenuItem>
 				</Menu>
 			</Outer>
