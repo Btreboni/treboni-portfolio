@@ -68,12 +68,16 @@ export default class RockPaperScissors extends PureComponent{
     declareWinner = (user, cpu) => {
         // 0 draw, 1 user win, 2 cpu win
         debugger
-        return user === cpu ? 0 : user.id === 1 && cpu.id === 3 ? 1 : user.id === 2 && cpu.id === 1 
-        ? 1 : user.id === 3 && cpu.id === 1 ? 1 : 0;
+        return user.id === cpu.id ? 0 : user.id === 1 && cpu.id === 3 ? 1 : user.id === 2 && cpu.id === 1 
+        ? 1 : user.id === 3 && cpu.id === 2 ? 1 : 2;
     }
 
     clearSelection(){
         this.setState({rock: false, paper: false, scissors: false})
+    }
+
+    playAgain = () =>{
+        this.setState({renderRPCRow: false, rock: false, paper: false, scissors: false})
     }
 
     render(){
@@ -89,7 +93,7 @@ export default class RockPaperScissors extends PureComponent{
                 {
                     renderRPCRow ?
                     <div className="winDiv">
-                        <WinLossRow userChoice={userChoice} cpuChoice={cpuChoice} winner={winner}/>
+                        <WinLossRow playAgain={this.playAgain} userChoice={userChoice} cpuChoice={cpuChoice} winner={winner}/>
                     </div>
 
                     :
