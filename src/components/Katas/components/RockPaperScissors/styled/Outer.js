@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Outer = styled.div`
     margin-top: auto;
-    margin-top: 14%;
+    margin-top: 8%;
 
     h1{
         margin-bottom: 3%;
