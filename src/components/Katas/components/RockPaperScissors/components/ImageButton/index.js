@@ -17,7 +17,7 @@ export default class ImageButton extends PureComponent{
         } = this.props
 
         return(
-            <Outer src={img} onClick={this.handleGameChange} value={value}/>
+            <Outer src={img} onClick={this.handleGameChange} value={value} alt="rpc-image"/>
         )
     }
 }
