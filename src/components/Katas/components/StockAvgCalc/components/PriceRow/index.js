@@ -1,5 +1,8 @@
 import React, { PureComponent } from 'react'
 
+//libraries
+import NumberFormat from 'react-number-format';
+
 //styled
 import Outer from './styled/Outer'
 
@@ -32,7 +35,7 @@ export default class PriceRow extends PureComponent{
             rowSevenSharesVal: null,
             rowEightSharesVal: null,
             rowOnePriceVal: null,
-            rowOnePriceVal: null,
+            rowTwoPriceVal: null,
             rowThreePriceVal: null,
             rowFourPriceVal: null,
             rowFivePriceVal: null,
@@ -43,14 +46,72 @@ export default class PriceRow extends PureComponent{
     }
 
     handleChange = (e) =>{
-        let ease = e.target.name;
-        let test = e.target.value
         this.setState({[e.target.name]: e.target.value})
+    }
+
+    calculate = () => {
+        const {
+            rowOneSharesVal,
+            rowTwoSharesVal,
+            rowThreeSharesVal,
+            rowFourSharesVal,
+            rowFiveSharesVal,
+            rowSixSharesVal,
+            rowSevenSharesVal,
+            rowEightSharesVal,
+            rowOnePriceVal,
+            rowTwoPriceVal,
+            rowThreePriceVal,
+            rowFourPriceVal,
+            rowFivePriceVal,
+            rowSixPriceVal,
+            rowSevenPriceVal,
+            rowEightPriceVal
+        } = this.state;
+
+        let dataArr = [
+            {amount: parseFloat(rowOneSharesVal), price: parseFloat(rowOnePriceVal)},
+            {amount: parseFloat(rowTwoSharesVal), price: parseFloat(rowTwoPriceVal)},
+            {amount: parseFloat(rowThreeSharesVal), price: parseFloat(rowThreePriceVal)},
+            {amount: parseFloat(rowFourSharesVal), price: parseFloat(rowFourPriceVal)},
+            {amount: parseFloat(rowFiveSharesVal), price: parseFloat(rowFivePriceVal)},
+            {amount: parseFloat(rowSixSharesVal), price: parseFloat(rowSixPriceVal)},
+            {amount: parseFloat(rowSevenSharesVal), price: parseFloat(rowSevenPriceVal)},
+            {amount: parseFloat(rowEightSharesVal), price: parseFloat(rowEightPriceVal)}
+        ];
+
+        let trade = 0;
+        let shares = 0;
+        let avg = 0;
+
+        for(let i = 0; i < 8; i++){
+            let iteration = dataArr[i];
+            debugger
+            let amountIsNullOrNaN = iteration.amount === null || isNaN(iteration.amount);
+            let priceIsNullOrNan = iteration.price === null || isNaN(iteration.price);
+
+            if((amountIsNullOrNaN && !priceIsNullOrNan) || (!amountIsNullOrNaN && priceIsNullOrNan)){
+                alert("Please make sure that all of your entries are complete using only numbers.");
+            }
+
+            if((!amountIsNullOrNaN) && (!amountIsNullOrNaN)){
+                trade += iteration.amount * iteration.price;
+                shares += iteration.amount;
+            }
+
+            if(i === 7){
+                avg = trade / shares;
+            }
+        }
+        let test = avg;
+        debugger
+        return avg;
     }
 
     render(){
         return(
             <Outer>
+                <NumberFormat value={2456981} displayType={'text'} thousandSeparator={true} prefix={'$'} />
                 <div className="button-row">
                     <FancyButton handleClick={this.calculate}>
                         Calculate
