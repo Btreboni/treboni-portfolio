@@ -3,6 +3,10 @@ import styled from 'styled-components'
 const Outer = styled.div`
     margin: auto;
     align-content: center;
+
+    h1{
+        margin: 1em;
+    }
     
     .row{
         margin: auto;

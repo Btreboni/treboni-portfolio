@@ -111,7 +111,8 @@ export default class PriceRow extends PureComponent{
     render(){
         return(
             <Outer>
-                <NumberFormat value={2456981} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+                <h1>Stock Price Average Calculator</h1>
+                {/* <NumberFormat value={2456981} displayType={'text'} thousandSeparator={true} prefix={'$'} /> */}
                 <div className="button-row">
                     <FancyButton handleClick={this.calculate}>
                         Calculate
