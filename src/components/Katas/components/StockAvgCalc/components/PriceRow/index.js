@@ -69,6 +69,10 @@ export default class PriceRow extends PureComponent{
             rowEightPriceVal
         } = this.state;
 
+        if(rowOneSharesVal === null || isNaN(rowOneSharesVal)){
+            alert("Please begin in the first column, first row, and make sure both the Shares Bought/Purchased Price values have been entered.");
+        }
+
         let dataArr = [
             {amount: parseFloat(rowOneSharesVal), price: parseFloat(rowOnePriceVal)},
             {amount: parseFloat(rowTwoSharesVal), price: parseFloat(rowTwoPriceVal)},
@@ -89,7 +93,7 @@ export default class PriceRow extends PureComponent{
             debugger
             let amountIsNullOrNaN = iteration.amount === null || isNaN(iteration.amount);
             let priceIsNullOrNan = iteration.price === null || isNaN(iteration.price);
-
+            
             if((amountIsNullOrNaN && !priceIsNullOrNan) || (!amountIsNullOrNaN && priceIsNullOrNan)){
                 alert("Please make sure that all of your entries are complete using only numbers.");
             }
