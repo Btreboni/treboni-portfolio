@@ -2,12 +2,19 @@ import styled from 'styled-components'
 
 const Outer = styled.div`
     margin: auto;
-    width: 30%;
-    display: flex;
+    align-content: center;
+    
+    .row{
+        margin: auto;
+        display: flex;
+        align-content: center;  
+    }
 
     .cell{
-        margin: 2%;
-        border: 2px solid red; 
+        margin: 1em;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid black;
     }
 `
 

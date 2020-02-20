@@ -38,11 +38,6 @@ export default class WinLossRow extends PureComponent{
                         <h2>{cpuChoice.title}</h2>
                         <img src={cpuChoice.img} width={200} height={200} alt="" />
                     </div>
-                    <div className="choice">
-                        <h2>You Chose:</h2>
-                        <h2>{userChoice.title}</h2>
-                        <img src={userChoice.img} width={200} height={200} alt=""/>
-                    </div>
                 </Wrapper>
                 <h1>{displayWinner}</h1>
             </Outer>

@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 
 const Outer = styled.div`
-    width: 100%;
-    margin: 8% auto 0 auto;
-
-    border: 2px solid blue;
+    width: 50%;
+    margin: auto;
+    margin-top: 8%;
 `
 
 export default Outer
