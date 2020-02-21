@@ -51,6 +51,7 @@ export default class PriceRow extends PureComponent{
 
     calculate = () => {
         const {
+            numberDisplay,
             rowOneSharesVal,
             rowTwoSharesVal,
             rowThreeSharesVal,
@@ -107,16 +108,20 @@ export default class PriceRow extends PureComponent{
                 avg = trade / shares;
             }
         }
-        let test = avg;
         debugger
-        return avg;
+        this.setState({numberDisplay: avg});
     }
 
     render(){
         return(
             <Outer>
                 <h1>Stock Price Average Calculator</h1>
-                {/* <NumberFormat value={2456981} displayType={'text'} thousandSeparator={true} prefix={'$'} /> */}
+                {
+                    this.state.numberDisplay ?
+                    <NumberFormat value={this.state.numberDisplay} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+                    :
+                    ""
+                }
                 <div className="button-row">
                     <FancyButton handleClick={this.calculate}>
                         Calculate
