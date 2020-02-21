@@ -7,6 +7,12 @@ const Outer = styled.div`
     h1{
         margin: 1em;
     }
+
+    span{
+        font-size: 5em;
+        // font-weight: bold;
+
+    }
     
     .row{
         margin: auto;

@@ -26,6 +26,7 @@ export default class PriceRow extends PureComponent{
     constructor(props){
         super(props)
         this.state = {
+            numberDisplay: null,
             rowOneSharesVal: null,
             rowTwoSharesVal: null,
             rowThreeSharesVal: null,
@@ -51,7 +52,6 @@ export default class PriceRow extends PureComponent{
 
     calculate = () => {
         const {
-            numberDisplay,
             rowOneSharesVal,
             rowTwoSharesVal,
             rowThreeSharesVal,
@@ -91,7 +91,6 @@ export default class PriceRow extends PureComponent{
 
         for(let i = 0; i < 8; i++){
             let iteration = dataArr[i];
-            debugger
             let amountIsNullOrNaN = iteration.amount === null || isNaN(iteration.amount);
             let priceIsNullOrNan = iteration.price === null || isNaN(iteration.price);
             
@@ -108,8 +107,8 @@ export default class PriceRow extends PureComponent{
                 avg = trade / shares;
             }
         }
-        debugger
-        this.setState({numberDisplay: avg});
+        
+        this.setState({numberDisplay: avg.toFixed(2)});
     }
 
     render(){
@@ -118,31 +117,37 @@ export default class PriceRow extends PureComponent{
                 <h1>Stock Price Average Calculator</h1>
                 {
                     this.state.numberDisplay ?
-                    <NumberFormat value={this.state.numberDisplay} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+                    <NumberFormat className="number-format" 
+                        value={this.state.numberDisplay} 
+                        displayType={'text'} 
+                        thousandSeparator={true} 
+                        prefix={'$'} />
                     :
-                    ""
-                }
-                <div className="button-row">
-                    <FancyButton handleClick={this.calculate}>
-                        Calculate
-                    </FancyButton>
-                </div>
-                {
-                    inputArr.map((option) =>{
-                        return <div className="row" key={option.key}>
-                            <div className="cell">
-                                <FancyTitleInput name={option.sharesName}
-                                    placeholder={"Shares Bought"} 
-                                    handleChange={this.handleChange}/>
-                            </div>
-                            <div className="cell">
-                                <FancyTitleInput name={option.pricesName}
-                                    placeholder={"Purchased Price"} 
-                                    handleChange={this.handleChange}/>
-                            </div>
+                        
+                    <div>
+                        <div className="button-row">
+                        <FancyButton handleClick={this.calculate}>
+                            Calculate
+                        </FancyButton>
                         </div>
-                    })
-                }
+                        {
+                            inputArr.map((option) =>{
+                                return <div className="row" key={option.key}>
+                                    <div className="cell">
+                                        <FancyTitleInput name={option.sharesName}
+                                            placeholder={"Shares Bought"} 
+                                            handleChange={this.handleChange}/>
+                                    </div>
+                                    <div className="cell">
+                                        <FancyTitleInput name={option.pricesName}
+                                            placeholder={"Purchased Price"} 
+                                            handleChange={this.handleChange}/>
+                                    </div>
+                                </div>
+                            })
+                        }
+                    </div>
+                }    
             </Outer>
         )
     }
