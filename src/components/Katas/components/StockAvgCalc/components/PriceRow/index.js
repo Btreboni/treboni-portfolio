@@ -72,43 +72,47 @@ export default class PriceRow extends PureComponent{
 
         if(rowOneSharesVal === null || isNaN(rowOneSharesVal)){
             alert("Please begin in the first column, first row, and make sure both the Shares Bought/Purchased Price values have been entered.");
-        }
-
-        let dataArr = [
-            {amount: parseFloat(rowOneSharesVal), price: parseFloat(rowOnePriceVal)},
-            {amount: parseFloat(rowTwoSharesVal), price: parseFloat(rowTwoPriceVal)},
-            {amount: parseFloat(rowThreeSharesVal), price: parseFloat(rowThreePriceVal)},
-            {amount: parseFloat(rowFourSharesVal), price: parseFloat(rowFourPriceVal)},
-            {amount: parseFloat(rowFiveSharesVal), price: parseFloat(rowFivePriceVal)},
-            {amount: parseFloat(rowSixSharesVal), price: parseFloat(rowSixPriceVal)},
-            {amount: parseFloat(rowSevenSharesVal), price: parseFloat(rowSevenPriceVal)},
-            {amount: parseFloat(rowEightSharesVal), price: parseFloat(rowEightPriceVal)}
-        ];
-
-        let trade = 0;
-        let shares = 0;
-        let avg = 0;
-
-        for(let i = 0; i < 8; i++){
-            let iteration = dataArr[i];
-            let amountIsNullOrNaN = iteration.amount === null || isNaN(iteration.amount);
-            let priceIsNullOrNan = iteration.price === null || isNaN(iteration.price);
+        } else {
+            let dataArr = [
+                {amount: parseFloat(rowOneSharesVal), price: parseFloat(rowOnePriceVal)},
+                {amount: parseFloat(rowTwoSharesVal), price: parseFloat(rowTwoPriceVal)},
+                {amount: parseFloat(rowThreeSharesVal), price: parseFloat(rowThreePriceVal)},
+                {amount: parseFloat(rowFourSharesVal), price: parseFloat(rowFourPriceVal)},
+                {amount: parseFloat(rowFiveSharesVal), price: parseFloat(rowFivePriceVal)},
+                {amount: parseFloat(rowSixSharesVal), price: parseFloat(rowSixPriceVal)},
+                {amount: parseFloat(rowSevenSharesVal), price: parseFloat(rowSevenPriceVal)},
+                {amount: parseFloat(rowEightSharesVal), price: parseFloat(rowEightPriceVal)}
+            ];
+    
+            let trade = 0;
+            let shares = 0;
+            let avg = 0;
+    
+            for(let i = 0; i < 8; i++){
+                let iteration = dataArr[i];
+                let amountIsNullOrNaN = iteration.amount === null || isNaN(iteration.amount);
+                let priceIsNullOrNan = iteration.price === null || isNaN(iteration.price);
+                
+                if((amountIsNullOrNaN && !priceIsNullOrNan) || (!amountIsNullOrNaN && priceIsNullOrNan)){
+                    alert("Please make sure that all of your entries are complete using only numbers.");
+                }
+    
+                if((!amountIsNullOrNaN) && (!amountIsNullOrNaN)){
+                    trade += iteration.amount * iteration.price;
+                    shares += iteration.amount;
+                }
+    
+                if(i === 7){
+                    avg = trade / shares;
+                }
+            }
             
-            if((amountIsNullOrNaN && !priceIsNullOrNan) || (!amountIsNullOrNaN && priceIsNullOrNan)){
-                alert("Please make sure that all of your entries are complete using only numbers.");
-            }
-
-            if((!amountIsNullOrNaN) && (!amountIsNullOrNaN)){
-                trade += iteration.amount * iteration.price;
-                shares += iteration.amount;
-            }
-
-            if(i === 7){
-                avg = trade / shares;
-            }
+            this.setState({numberDisplay: avg.toFixed(2)});
         }
-        
-        this.setState({numberDisplay: avg.toFixed(2)});
+    }
+
+    recalc = () => {
+        this.setState({});
     }
 
     render(){
@@ -117,11 +121,16 @@ export default class PriceRow extends PureComponent{
                 <h1>Stock Price Average Calculator</h1>
                 {
                     this.state.numberDisplay ?
-                    <NumberFormat className="number-format" 
-                        value={this.state.numberDisplay} 
-                        displayType={'text'} 
-                        thousandSeparator={true} 
-                        prefix={'$'} />
+                    <div>
+                        <NumberFormat className="number-format" 
+                            value={this.state.numberDisplay} 
+                            displayType={'text'} 
+                            thousandSeparator={true} 
+                            prefix={'$'} />
+                        <FancyButton handleClick={this.recalc}>
+                            Recalculate
+                        </FancyButton>
+                    </div>
                     :
                         
                     <div>
