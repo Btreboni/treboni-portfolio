@@ -46,6 +46,11 @@ export default class PriceRow extends PureComponent{
         }
     }
 
+    componentWillMount(){
+        debugger
+        this.initialState = this.state
+    }
+
     handleChange = (e) =>{
         this.setState({[e.target.name]: e.target.value})
     }
@@ -70,7 +75,7 @@ export default class PriceRow extends PureComponent{
             rowEightPriceVal
         } = this.state;
 
-        if(rowOneSharesVal === null || isNaN(rowOneSharesVal)){
+        if(rowOneSharesVal === null || isNaN(rowOneSharesVal) || rowOnePriceVal === null || isNaN(rowOnePriceVal)){
             alert("Please begin in the first column, first row, and make sure both the Shares Bought/Purchased Price values have been entered.");
         } else {
             let dataArr = [
@@ -94,16 +99,16 @@ export default class PriceRow extends PureComponent{
                 let priceIsNullOrNan = iteration.price === null || isNaN(iteration.price);
                 
                 if((amountIsNullOrNaN && !priceIsNullOrNan) || (!amountIsNullOrNaN && priceIsNullOrNan)){
-                    alert("Please make sure that all of your entries are complete using only numbers.");
-                }
-    
-                if((!amountIsNullOrNaN) && (!amountIsNullOrNaN)){
-                    trade += iteration.amount * iteration.price;
-                    shares += iteration.amount;
-                }
-    
-                if(i === 7){
-                    avg = trade / shares;
+                    alert("Only completed rows with both the Shares Bought & Purchase Price will be included in the calculated average.");
+                } else {
+                    if((!amountIsNullOrNaN) && (!amountIsNullOrNaN)){
+                        trade += iteration.amount * iteration.price;
+                        shares += iteration.amount;
+                    }
+        
+                    if(i === 7){
+                        avg = trade / shares;
+                    }
                 }
             }
             
@@ -112,18 +117,42 @@ export default class PriceRow extends PureComponent{
     }
 
     recalc = () => {
-        this.setState({});
+        this.setState({            
+            numberDisplay: null,
+            rowOneSharesVal: null,
+            rowTwoSharesVal: null,
+            rowThreeSharesVal: null,
+            rowFourSharesVal: null,
+            rowFiveSharesVal: null,
+            rowSixSharesVal: null,
+            rowSevenSharesVal: null,
+            rowEightSharesVal: null,
+            rowOnePriceVal: null,
+            rowTwoPriceVal: null,
+            rowThreePriceVal: null,
+            rowFourPriceVal: null,
+            rowFivePriceVal: null,
+            rowSixPriceVal: null,
+            rowSevenPriceVal: null,
+            rowEightPriceVal: null
+        });
     }
 
     render(){
+        const {
+            numberDisplay
+        } = this.state;
+        
+        let tr = this.state;
+        debugger
         return(
             <Outer>
                 <h1>Stock Price Average Calculator</h1>
                 {
-                    this.state.numberDisplay ?
+                    numberDisplay ?
                     <div>
                         <NumberFormat className="number-format" 
-                            value={this.state.numberDisplay} 
+                            value={numberDisplay} 
                             displayType={'text'} 
                             thousandSeparator={true} 
                             prefix={'$'} />
