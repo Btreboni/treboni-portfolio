@@ -44,7 +44,6 @@ export default class PriceRow extends PureComponent{
     }
 
     componentWillMount(){
-        debugger
         this.initialState = this.state
     }
 
@@ -94,21 +93,19 @@ export default class PriceRow extends PureComponent{
                 let iteration = dataArr[i];
                 let amountIsNullOrNaN = iteration.amount === null || isNaN(iteration.amount);
                 let priceIsNullOrNan = iteration.price === null || isNaN(iteration.price);
-                debugger
+
                 if((amountIsNullOrNaN && !priceIsNullOrNan) || (!amountIsNullOrNaN && priceIsNullOrNan)){
                     alert("Only completed rows with both the Shares Bought & Purchase Price will be included in the calculated average.");
                 } else {
-                    debugger
                     if((!amountIsNullOrNaN) && (!amountIsNullOrNaN)){
                         trade += iteration.amount * iteration.price;
                         shares += iteration.amount;
                     }
-                    debugger
+
                     if(i === 7){
                         avg = trade / shares;
                         avg = avg.toFixed(2);
                         avg = "$" + avg + "/share";
-                        debugger
                     }
                 }
             }
@@ -144,11 +141,9 @@ export default class PriceRow extends PureComponent{
             numberDisplay
         } = this.state;
         
-        let tr = this.state;
-        debugger
+
         return(
             <Outer>
-                <h1>Stock Price Average Calculator</h1>
                 {
                     numberDisplay ?
                     <div>
