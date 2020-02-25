@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Outer = styled.div`
-margin-top: 8%;
+    margin-top: 8%;
     font-family: 'Overpass Mono', monospace , sans-serif;
 
     p {
