@@ -1,8 +1,5 @@
 import React, { PureComponent } from 'react'
 
-//libraries
-import NumberFormat from 'react-number-format';
-
 //styled
 import Outer from './styled/Outer'
 
@@ -97,22 +94,26 @@ export default class PriceRow extends PureComponent{
                 let iteration = dataArr[i];
                 let amountIsNullOrNaN = iteration.amount === null || isNaN(iteration.amount);
                 let priceIsNullOrNan = iteration.price === null || isNaN(iteration.price);
-                
+                debugger
                 if((amountIsNullOrNaN && !priceIsNullOrNan) || (!amountIsNullOrNaN && priceIsNullOrNan)){
                     alert("Only completed rows with both the Shares Bought & Purchase Price will be included in the calculated average.");
                 } else {
+                    debugger
                     if((!amountIsNullOrNaN) && (!amountIsNullOrNaN)){
                         trade += iteration.amount * iteration.price;
                         shares += iteration.amount;
                     }
-        
+                    debugger
                     if(i === 7){
                         avg = trade / shares;
+                        avg = avg.toFixed(2);
+                        avg = "$" + avg + "/share";
+                        debugger
                     }
                 }
             }
             
-            this.setState({numberDisplay: avg.toFixed(2)});
+            this.setState({numberDisplay: avg});
         }
     }
 
@@ -151,14 +152,14 @@ export default class PriceRow extends PureComponent{
                 {
                     numberDisplay ?
                     <div>
-                        <NumberFormat className="number-format" 
-                            value={numberDisplay} 
-                            displayType={'text'} 
-                            thousandSeparator={true} 
-                            prefix={'$'} />
-                        <FancyButton handleClick={this.recalc}>
-                            Recalculate
-                        </FancyButton>
+                        <div>
+                            <h2>{numberDisplay}</h2>
+                        </div>
+                        <div className="button-row">
+                            <FancyButton handleClick={this.recalc}>
+                                    Recalculate
+                            </FancyButton>
+                        </div>
                     </div>
                     :
                         

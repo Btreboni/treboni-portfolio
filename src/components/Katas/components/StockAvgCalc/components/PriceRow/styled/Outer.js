@@ -8,6 +8,10 @@ const Outer = styled.div`
         margin: 1em;
     }
 
+    h2{
+        margin: 1em;
+    }
+
     span{
         font-size: 5em;
         // font-weight: bold;
