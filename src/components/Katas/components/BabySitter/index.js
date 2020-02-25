@@ -139,7 +139,6 @@ export default class BabySitterKata extends PureComponent {
         let startTimeToMidnight = (12 - startTime) * startToDownTimeRate;
         let afterMidnight = this.calculateAfterMidnightWage(endTime);
         let wage = startTimeToMidnight + afterMidnight;
-        debugger
         return wage;
     }
 

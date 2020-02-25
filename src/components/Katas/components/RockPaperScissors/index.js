@@ -67,7 +67,6 @@ export default class RockPaperScissors extends PureComponent{
 
     declareWinner = (user, cpu) => {
         // 0 draw, 1 user win, 2 cpu win
-        debugger
         return user.id === cpu.id ? 0 : user.id === 1 && cpu.id === 3 ? 1 : user.id === 2 && cpu.id === 1 
         ? 1 : user.id === 3 && cpu.id === 2 ? 1 : 2;
     }
@@ -86,7 +85,6 @@ export default class RockPaperScissors extends PureComponent{
         let userChoice = renderRPCRow ? this.userChoice(this.state) : null;
         let cpuChoice = renderRPCRow ? this.cpuChoice(this.state) : null;
         let winner = renderRPCRow ? this.declareWinner(userChoice, cpuChoice) : null;
-        debugger
 
         return(
             <Outer>
