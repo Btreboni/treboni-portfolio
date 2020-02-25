@@ -16,6 +16,7 @@ import Katas from './components/Katas'
 
 //Kata components
 import BabySitterKata from './components/Katas/components/BabySitter'
+import Calculator from './components/Katas/components/Calculator'
 import RiskyBusiness from './components/RiskyBusiness'
 import RockPaperScissorsKata from './components/Katas/components/RockPaperScissors'
 import StockAvgCalc from './components/Katas/components/StockAvgCalc'
@@ -35,6 +36,11 @@ class App extends PureComponent {
     return <Experience />
   }
 
+  renderRisky = () => {
+    return <RiskyBusiness />
+  }
+
+  //KATAS
   renderCodingKatas = () => {
     return <Katas/>
   }
@@ -43,16 +49,16 @@ class App extends PureComponent {
     return <BabySitterKata />
   }
 
+  renderCalc = () => {
+    return <Calculator />
+  }
+
   renderRPCKata = () =>{
     return <RockPaperScissorsKata />
   }
 
   renderStockCalc = () =>{
     return <StockAvgCalc />
-  }
-
-  renderRisky = () => {
-    return <RiskyBusiness />
   }
 
   render() {
@@ -66,11 +72,14 @@ class App extends PureComponent {
                 <Route exact path="/" component={Home} />
                 <Route path="/about" render={this.renderAboutMe} />
                 <Route path="/experience" render={this.renderExperience} />
+                {/* Katas */}
                 <Route path="/katas" render={this.renderCodingKatas} />
                 <Route path="/babySitterKata" render={this.renderBabySitterKata} />
+                <Route path="/calculator" render={this.renderCalc} />
+                <Route path="/risky" render={this.renderRisky} />
                 <Route path="/rockPaperScissorsKata" render={this.renderRPCKata} />
                 <Route path="/stockPriceAvg" render={this.renderStockCalc} />
-                <Route path="/risky" render={this.renderRisky} />
+                {/* Katas */}
               </Switch>
             </Main>
             <Footer />
