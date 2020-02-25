@@ -10,9 +10,17 @@ export default class CalcButton extends PureComponent{
 
         }
     }
+
+    isOperator = (val) =>{
+        return !isNaN(val) || val === "." || val === "=";
+    }
     render(){
+        const {
+            isOperator
+        } = this.props
         return(
-            <Outer>
+            // <Outer className={`button ${this.isOperator(this.props.children) ? "" : "operator"}`}>
+            <Outer isOperator={isOperator}>
                 {this.props.children}
             </Outer>
         )

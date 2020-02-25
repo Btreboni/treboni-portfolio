@@ -19,28 +19,28 @@ export default class Calculator extends PureComponent{
             <Outer>
                 <div className="calc-wrapper">
                     <div className="row">
-                        <CalcButton>7</CalcButton>
-                        <CalcButton>8</CalcButton>
-                        <CalcButton>9</CalcButton>
-                        <CalcButton>/</CalcButton>
+                        <CalcButton isOperator={false}>7</CalcButton>
+                        <CalcButton isOperator={false}>8</CalcButton>
+                        <CalcButton isOperator={false}>9</CalcButton>
+                        <CalcButton isOperator={true}>/</CalcButton>
                     </div>
                     <div className="row">
-                        <CalcButton>4</CalcButton>
-                        <CalcButton>5</CalcButton>
-                        <CalcButton>6</CalcButton>
-                        <CalcButton>*</CalcButton>
+                        <CalcButton isOperator={false}>4</CalcButton>
+                        <CalcButton isOperator={false}>5</CalcButton>
+                        <CalcButton isOperator={false}>6</CalcButton>
+                        <CalcButton isOperator={true}>*</CalcButton>
                     </div>
                     <div className="row">
-                        <CalcButton>1</CalcButton>
-                        <CalcButton>2</CalcButton>
-                        <CalcButton>3</CalcButton>
-                        <CalcButton>+</CalcButton>
+                        <CalcButton isOperator={false}>1</CalcButton>
+                        <CalcButton isOperator={false}>2</CalcButton>
+                        <CalcButton isOperator={false}>3</CalcButton>
+                        <CalcButton isOperator={true}>+</CalcButton>
                     </div>
                     <div className="row">
-                        <CalcButton>.</CalcButton>
-                        <CalcButton>0</CalcButton>
-                        <CalcButton>=</CalcButton>
-                        <CalcButton>-</CalcButton>
+                        <CalcButton isOperator={false}>.</CalcButton>
+                        <CalcButton isOperator={false}>0</CalcButton>
+                        <CalcButton isOperator={false}>=</CalcButton>
+                        <CalcButton isOperator={true}>-</CalcButton>
                     </div>
                 </div>
             </Outer>

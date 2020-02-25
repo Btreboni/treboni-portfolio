@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components';
 
-const Outer = styled.button`
+const Outer = styled.div`
     display: flex;
     height: 4em;
     flex: 1;
@@ -8,9 +8,22 @@ const Outer = styled.button`
     align-items: center;
     font-weight: lighter;
     font-size: 1.4em;
-    background-color: #A9A9A9;
-    color: #black;
     outline: 1px solid #888;
+
+    ${({isOperator})=> 
+    isOperator ? 
+      css`
+        
+        background-color: #fe9241;
+        color: #fff;
+        
+      `
+    : 
+      css`
+        background-color: #A9A9A9;
+        color: #black;
+      `
+    }
 `
 
 export default Outer
